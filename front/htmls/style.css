@@ -1,0 +1,6561 @@
+@charset "UTF-8";
+/* NTS UIT YJM 20130521 */
+/* Common */
+body {
+    background: #eee;
+    margin: 0;
+    padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6, menu, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+}
+
+body, input, textarea, select, button, table {
+    font-family: '돋움', Dotum, sans-serif;
+    font-size: 12px;
+    line-height: normal;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, fieldset {
+    border: 0;
+}
+
+menu, ul, ol {
+    list-style: none;
+}
+
+em, address {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+    text-decoration: underline;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+button[disabled=disabled] {
+    cursor: default !important;
+}
+
+input[type=image], input[type=text], input[type=submit], input[type=password] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    resize: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    resize: none;
+}
+
+.blind {
+    overflow: hidden;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.ir {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+
+.hide {
+    display: none !important;
+}
+
+.scroll_top {
+    position: absolute;
+    right: -21px;
+    z-index: 50;
+    width: 36px;
+    height: 36px;
+}
+
+.scroll_top a {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -310px -370px;
+}
+
+/* layout */
+#wrap {
+    width: 1230px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 50px;
+}
+
+.head_contents {
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 50px;
+    z-index: 100;
+}
+
+#container {
+    float: none;
+    *zoom: 1;
+    min-height: 100%;
+}
+
+#container:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.lft_area {
+    width: 130px;
+    float: left;
+    padding: 23px 25px;
+}
+
+.lft_area .snb {
+    padding-left: 2px;
+}
+
+.section {
+    float: none;
+    margin-left: 180px;
+    *zoom: 1;
+}
+
+.section:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.contents {
+    position: relative;
+    float: left;
+    width: 750px;
+    border-left: 1px solid #aeaeae;
+    border-right: 1px solid #eaeaea;
+    min-height: 768px;
+    *z-index: 10;
+}
+
+.contents:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.aside {
+    float: right;
+    width: 260px;
+    padding: 16px 0 0 0;
+    margin-right: 18px;
+    position: relative;
+}
+
+#section_cldmm {
+    position: relative;
+    z-index: 5;
+    width: 260px;
+    height: 100%;
+}
+
+.footer_contents {
+    position: relative;
+    padding: 40px 0 25px 0;
+    margin-left: 180px;
+    width: 750px;
+    border-left: 1px solid #aeaeae;
+    border-right: 1px solid #eaeaea;
+}
+
+#container.me_menu3 + #footer .footer_contents {
+    background: #f6f6f6;
+}
+
+#container.me_menu1 + #footer .footer_contents, #container.me_menu2 + #footer .footer_contents {
+    background: #fff;
+}
+
+.footer_contents p {
+    text-align: center;
+    font-family: verdana, serif;
+    font-size: 9px;
+    color: #3c4756;
+}
+
+.footer_contents p a {
+    color: #3c4756;
+    font-weight: bold;
+}
+
+/* loading */
+
+.loading_area p {
+    width: 25px;
+    height: 7px;
+    margin: 0 auto;
+    background: url(http://static.naver.net/me/new/loading_w.gif) no-repeat;
+}
+
+.me_menu1 .loading_area p, .me_menu2 .loading_area p {
+    background: url(http://static.naver.net/me/new/loading_g.gif) no-repeat;
+}
+
+/* gnb */
+
+.home_type li {
+    float: left;
+    width: 46px;
+    height: 30px;
+    border-right: 1px solid #1b1a1a;
+}
+
+.home_type li:first-child {
+    border-left: 1px solid #1b1a1a;
+}
+
+.home_type li a {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.home_type li a span {
+    position: absolute;
+    top: -999px;
+}
+
+.home_type li a:focus span, .home_type li a:hover span {
+    position: absolute;
+    text-indent: -9999px;
+    z-index: 100;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -9999px -9999px;
+}
+
+.home_type li.type1 a {
+    background-position: 0 0;
+}
+
+.home_type li.type2 a {
+    background-position: -50px 0;
+}
+
+.home_type li.type3 a {
+    background-position: -100px 0;
+}
+
+#gnb_more dl {
+    float: left;
+    width: 92px;
+    height: 209px;
+    padding-left: 6px;
+    border-left: 1px solid #ededed;
+    line-height: 11px;
+}
+
+#gnb_more dl dt, #gnb_more dl dd {
+    letter-spacing: 0;
+}
+
+#gnb_more dl dt {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    margin: 0;
+    padding: 0 0 5px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 11px;
+    color: #390;
+}
+
+#gnb_more .gnb_more_svc2 dl dt {
+    padding: 0 0 4px;
+}
+
+#gnb_more dl dt * {
+    font-weight: bold;
+    line-height: 11px;
+    color: #390;
+}
+
+#gnb_more dl dd {
+    padding-bottom: 8px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #2f3743;
+}
+
+#gnb_more dl dd * {
+    line-height: 12px;
+}
+
+#gnb_more .gnb_more_svc dl dd a {
+    color: #2f3743;
+}
+
+#gnb_more dl dd a:link, #gnb_more dl dd a:visited {
+    color: #2f3743;
+}
+
+#gnb_more .gnb_more_svc dl dd a:hover {
+    color: #390;
+}
+
+#gnb_more dl.gnb_more_lst5 dt {
+    left: 0;
+}
+
+#gnb_more dt span {
+    font-size: 12px;
+    color: #99cc7f;
+}
+
+#gnb_more .gnb_more_lst5 dt {
+    font-size: 11px;
+}
+
+.dir_svc .ico_num {
+    background-image: url(http://static.naver.net/me/new/sp_high_151117.png);
+    background-repeat: no-repeat;
+}
+
+.dir_svc .ico_num .num_lft {
+    background-image: url(http://static.naver.net/me/new/sp_high_151117.png);
+    background-repeat: no-repeat;
+}
+
+.control_box.alarm .svc_symb span, .control_box.alarm .access_ena .go_access span {
+    background-image: url(http://static.naver.net/me/new/sp_high_151117.png);
+    background-repeat: no-repeat;
+}
+
+.widget_control .ic {
+    background-image: url(http://static.naver.net/me/new/sp_high_151117.png);
+    background-repeat: no-repeat;
+}
+
+.ic_bookmark a, .null {
+    background-image: url(http://static.naver.net/me/new/sp_high_151117.png);
+    background-repeat: no-repeat;
+}
+
+/* pnb */
+.dir_svc {
+    border: 1px solid #aaa;
+    position: relative;
+    float: none;
+    margin-bottom: 15px;
+    width: 257px;
+}
+
+.dir_svc:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.dir_svc li {
+    text-align: center;
+    float: left;
+    position: relative;
+    width: 85px;
+    height: 25px;
+    vertical-align: middle;
+    border-right: 1px solid #aaa;
+    line-height: 25px;
+}
+
+.dir_svc li:last-child {
+    border-right: none;
+}
+
+.dir_svc li.mail a {
+    background-position: 0 0;
+}
+
+.dir_svc li.memo a {
+    background-position: -42px 0;
+}
+
+.dir_svc li.address a {
+    background-position: -84px 0;
+}
+
+.dir_svc li.calendar a {
+    background-position: 0 -42px;
+}
+
+.dir_svc li.memo2 a {
+    background-position: 0 -83px;
+}
+
+.dir_svc li.ndrive a {
+    background-position: -42px -42px;
+}
+
+.dir_svc li.office a {
+    background-position: -42px -82px;
+}
+
+.dir_svc li.mybook a {
+    background-position: -84px -42px;
+}
+
+.dir_svc .ico_num {
+    display: inline-block;
+    position: absolute;
+    top: -4px;
+    right: -15px;
+    height: 18px;
+    margin-left: 6px;
+    padding: 0 18px 0 2px;
+    background-position: 100% 0;
+    font-size: 10px;
+    font-family: tahoma, sans-serif;
+    line-height: 14px;
+    color: #fff;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.dir_svc .ico_num .num_lft {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 6px;
+    height: 17px;
+    background-position: -840px 0;
+}
+
+/* serach */
+
+.dir_search .go_dir a {
+    color: #777;
+    letter-spacing: -1px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dir_search .go_dir a:first-child span {
+    background: none;
+}
+
+.dir_search .go_dir a:hover {
+    color: #fff;
+}
+
+.dir_search .go_dir a span {
+    display: inline-block;
+    margin-left: 4px;
+    width: 7px;
+    height: 5px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -150px 0;
+    vertical-align: middle;
+}
+
+.dir_search fieldset {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* top menu */
+.top_area {
+    height: 49px;
+    background: #2b5f5b;
+    border-bottom: 1px solid #419490;
+}
+
+.top_contents {
+    position: relative;
+    width: 1230px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.top_contents .top_logo {
+    overflow: hidden;
+    float: left;
+    height: 42px;
+    padding-top: 10px;
+    margin-left: 26px;
+}
+
+.top_contents .top_logo span {
+    display: inline-block;
+    float: left;
+}
+
+.top_contents .top_logo span a {
+    display: inline-block;
+    width: 100%;
+    height: 17px;
+    font-size: 27px;
+    color: #fff;
+}
+
+.top_contents .top_logo span.logo_ci {
+    width:150px;
+    height: 15px;
+    background-position: 0 0;
+    margin-right: 4px;
+}
+
+.top_menu {
+    line-height: 50px;
+    position: relative;
+    margin-left: 180px;
+    float: none;
+    *zoom: 1;
+    width: 580px;
+}
+
+.top_menu:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.top_menu .search_bar {
+    width: 100%;
+}
+
+.top_menu textarea {
+    height: 20px;
+}
+
+/* personal area */
+.my_area {
+    position: absolute;
+    right: 81px;
+    top: 13px;
+    display: inline-block;
+}
+
+.my_area .person_info .pf_ch .pf_thumb .mask {
+    display: inline-block;
+    width: 39px;
+    height: 39px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(http://static.naver.net/me/new/small_profilebg.png) no-repeat;
+}
+
+.my_area .person_info .pf_ch dl {
+    overflow: hidden;
+    padding-left: 8px;
+    padding-top: 5px;
+}
+
+.my_area .person_info .pf_ch dt {
+    position: relative;
+    width: 140px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.my_area .person_info .pf_ch dt span {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.my_area .person_info .pf_ch dt em {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    margin-left: 5px;
+    width: 5px;
+    height: 3px;
+    background: url(http://static.naver.net/me/new/pf_arr.gif) no-repeat 100% 50%;
+}
+
+.my_area .person_info .pf_ch dt.on em {
+    background: url(http://static.naver.net/me/new/pf_arr2.gif) no-repeat 100% 50%;
+}
+
+.my_area .person_info .pf_ch dd {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-top: 4px;
+    color: #bbf8be;
+    width: 140px;
+}
+
+.my_area .person_env li {
+    float: left;
+}
+
+.my_area .person_env li a {
+    color: #e3e3e3;
+    letter-spacing: -1px;
+}
+
+.my_area .person_env li.btn_env a {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -140px 0;
+    margin-top: -8px;
+    margin-left: 8px;
+}
+
+.my_area .person_env li.btn_env a:hover {
+    background-position: -180px 0;
+}
+
+.my_area .person_info .user_lgout a {
+    display: block;
+    height: 18px;
+}
+
+/* left menu */
+.snb li a {
+    display: block;
+}
+
+.snb .cmm_lst li {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #777;
+}
+
+.snb .cmm_lst li:first-child {
+    margin-top: 0;
+}
+
+.snb .cmm_lst li a {
+    color: #777;
+}
+
+.snb .cmm_lst li.on a {
+    color: #00b71e;
+    font-weight: bold;
+}
+
+.lft_area h3 {
+    font-size: 12px;
+    color: #333;
+    padding-left: 2px;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 13px;
+}
+
+.lft_area h3 a {
+    color: #333;
+}
+
+.lft_area h3.on a {
+    color: #08c246;
+}
+
+.snb > li > span {
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px 0 12px;
+}
+
+.snb > li > span a {
+    display: block;
+    color: #333;
+    font-weight: bold;
+}
+
+.snb > li.on span a {
+    color: #08c246;
+}
+
+.snb > li > span.read_subjct a {
+    background: url(http://static.naver.net/me/new/bul_snb1_1.gif) no-repeat 100% 50%;
+}
+
+.snb > li.slide > span.read_subjct a {
+    background: url(http://static.naver.net/me/new/bul_snb1.gif) no-repeat 100% 50%;
+}
+
+.snb > li.on > span.read_subjct a {
+    background: url(http://static.naver.net/me/new/bul_snb2_1.gif) no-repeat 100% 50%;
+}
+
+.snb > li.on.slide > span.read_subjct a {
+    background: url(http://static.naver.net/me/new/bul_snb2.gif) no-repeat 100% 50%;
+}
+
+.snb > li a {
+    color: #888;
+}
+
+.snb > li ul li a {
+    padding-top: 15px;
+}
+
+.snb > li ul li.on a {
+    color: #08c246;
+}
+
+.me_menu2 .h_all_lst span {
+    display: inline-block;
+    width: 100%;
+}
+
+.me_menu2 .h_all_lst span a {
+    color: #555;
+}
+
+.me_menu2 .h_all_lst span.on {
+    background-position: -549px 1px;
+}
+
+.me_menu2 .h_all_lst span.off {
+    background-position: -550px -29px;
+}
+
+.me_menu2 .h_all_lst span.off a {
+    color: #555;
+}
+
+.me_menu2 .h_all_lst span.on a {
+    color: #00b71e;
+}
+
+.me_menu2 .snb > li > .h_snb_title.on a {
+    color: #00b71e;
+}
+
+.me_menu2 .snb > li > .h_snb_title a {
+    color: #555;
+}
+
+.me_menu2 .snb > li > .h_snb_title button {
+    position: absolute;
+    top: 15px;
+    background: url(http://static.naver.net/me/new/sp_me_new20131120.png) no-repeat;
+}
+
+.me_menu2 .snb > li > .h_snb_title button.align {
+    right: 15px;
+    width: 12px;
+    height: 10px;
+    background-position: -550px -190px;
+}
+
+.me_menu2 .snb > li > .h_snb_title button.align.on, .me_menu2 .snb > li > .h_snb_title button.align:hover {
+    background-position: -550px -150px;
+}
+
+.me_menu2 .snb > li > .h_snb_title button.add {
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-position: -550px -260px;
+}
+
+.me_menu2 .snb > li > .h_snb_title button.add.on, .me_menu2 .snb > li > .h_snb_title button.add:hover {
+    background-position: -550px -220px;
+}
+
+.me_menu2 .snb > li ul li {
+    position: relative;
+    padding: 9px 0 0 2px;
+}
+
+.me_menu2 .snb > li ul li.current {
+    *z-index: 20;
+}
+
+.me_menu2 .snb > li ul li a {
+    color: #777;
+}
+
+.me_menu2 .snb > li ul li.on a {
+    color: #00b71e;
+    font-weight: bold;
+}
+
+.me_menu2 .snb .depth_bmk1 ul {
+    margin-top: 9px;
+}
+
+.me_menu2 .snb > li.depth_bmk1 > .h_snb_title a {
+    display: block;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li button {
+    display: none;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li span {
+    display: inline-block;
+    width: 100%;
+    background: url(http://static.naver.net/me/new/sp_me_new20131120.png) no-repeat -9999px -9999px;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li span a {
+    display: block;
+    padding-left: 20px;
+    line-height: 17px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80%;
+    min-width: 80%;
+    padding-top: 0;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li .me_btn {
+    margin-left: 1px;
+    width: auto;
+    padding: 0 16px 0 0;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;
+    *background: none;
+    *text-align: center;
+    *padding: 0 0 0 0;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li .me_btn:before {
+    margin-right: 13px;
+}
+
+.me_menu2 .snb > li.depth_bmk1 li .me_btn button {
+    display: inline-block;
+    *display: block;
+    *height: 29px;
+    *line-height: 29px;
+    *width: 40px;
+    *text-align: center;
+}
+
+.me_menu2 .snb .depth_bmk2 > .h_snb_title > a {
+    padding-left: 16px;
+}
+
+.me_menu2 .snb > li.depth_bmk2 li span {
+    display: inline-block;
+    height: 15px;
+    background: url(http://static.naver.net/me/new/sp_me_new20131120.png) no-repeat;
+}
+
+.me_menu2 .snb > li.depth_bmk2 li span a {
+    padding-left: 20px;
+    line-height: 17px;
+    padding-top: 0;
+}
+
+.me_menu2 .snb > li.depth_bmk2 ul {
+    padding-top: 4px;
+}
+
+.me_menu2 .snb > li.depth_bmk2 li {
+    padding: 12px 0 0 1px;
+}
+
+.ly_foler_op li {
+    border-top: 1px solid #dcdcdc;
+    height: 25px;
+    padding: 0 !important;
+}
+
+.ly_foler_op li:first-child {
+    border-top: 0;
+}
+
+.ly_foler_op li a {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 8px;
+    color: #222;
+    padding-top: 0 !important;
+}
+
+.ly_foler_op li a:hover {
+    text-decoration: none;
+    background: #ebebeb;
+}
+
+.ly_align_op li {
+    border-top: 1px solid #dcdcdc;
+    height: 25px;
+    padding: 0 !important;
+}
+
+.ly_align_op li:first-child {
+    border-top: 0;
+}
+
+.me_menu2 .snb > li .ly_align_op li.on a {
+    *width: 48px;
+    color: #222;
+    font-weight: normal;
+    background: #ebebeb url(http://static.naver.net/me/new/chk_ly.gif) no-repeat 8px -11px;
+}
+
+.ly_align_op li a {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    color: #222;
+    padding: 0 5px 0 20px !important;
+    font-weight: normal;
+    background: url(http://static.naver.net/me/new/chk_ly.gif) no-repeat 8px 9px;
+}
+
+.ly_align_op li a:hover {
+    text-decoration: none;
+    background: #ebebeb url(http://static.naver.net/me/new/chk_ly.gif) no-repeat 8px -11px;
+}
+
+.ly_align_op li.on a:hover {
+    text-decoration: none;
+    background: #ebebeb url(http://static.naver.net/me/new/chk_ly.gif) no-repeat 8px -11px;
+}
+
+.h_snb_title.on .ly_align_op li a {
+    color: #222 !important;
+}
+
+.me_menu2 .snb > li ul li.on .ly_foler_op a {
+    color: #222;
+    font-weight: normal;
+}
+
+/* contents */
+
+.me_menu2 .contents, .me_menu1 .contents {
+    background: #fff;
+}
+
+.top_btn_area {
+    float: none;
+    padding: 10px 15px 0 15px;
+    position: relative;
+    height: 39px;
+    border-bottom: 1px solid #dfdfdf;
+    line-height: 49px;
+    *zoom: 1;
+    *z-index: 40;
+}
+
+.top_btn_area:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.top_btn_area .view_mode {
+    float: left;
+    margin-top: -8px;
+    padding-left: 9px;
+}
+
+.top_btn_area .view_mode ul {
+    float: left;
+}
+
+.top_btn_area .view_mode li {
+    float: left;
+    font-size: 12px;
+}
+
+.top_btn_area .view_mode li span {
+    color: #e6e6e6;
+    padding: 0 6px 0 1px;
+}
+
+.top_btn_area .view_mode li.on a {
+    font-weight: bold;
+    color: #333;
+}
+
+.top_btn_area .view_mode li a {
+    color: #888;
+}
+
+.top_btn_area button {
+    display: inline-block;
+    float: right;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    border: 0;
+}
+
+.top_btn_area button.btn_board {
+    width: 78px;
+    height: 29px;
+    background-position: -470px -250px;
+}
+
+.top_btn_area button.go_btn_env {
+    width: 30px;
+    margin-left: 7px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat;
+    background-position: -310px -410px;
+}
+
+.top_btn_area button.del_all {
+    width: 62px;
+    margin-right: 5px;
+    background-position: -170px -260px;
+}
+
+.top_btn_area button.del_readed {
+    width: 90px;
+    background-position: -70px -260px;
+    margin-right: 5px;
+}
+
+.top_btn_area button.btn_reload {
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    background-position: -160px -40px;
+    margin-right: 5px;
+    width: 30px;
+    height: 29px;
+}
+
+.top_btn_area button.btn_area {
+    width: 94px;
+    height: 29px;
+    background-position: 0 -290px;
+}
+
+.top_btn_area .me_btn.btn_board {
+    float: left;
+    *height: 27px;
+}
+
+.top_btn_area .me_btn.btn_board button {
+    float: none;
+    *padding: 0 5px;
+    *height: 25px;
+}
+
+.top_btn_area .chck input {
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 4px;
+}
+
+.time_line {
+    padding: 25px 25px 25px 20px;
+}
+
+.time_line .daily_obj h4 {
+    height: 33px;
+    background: url(http://static.naver.net/me/new/ico_time.png) no-repeat;
+    padding-left: 40px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #333;
+    font-family: dotum;
+    line-height: 33px;
+}
+
+.nlst_checked dt, .nlst_checked strong, .nlst_checked a, .nlst_checked em {
+    color: #999 !important;
+}
+
+.tx_tooltip .thumb {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 13px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -410px -400px;
+}
+
+.tx_tooltip .thumb a {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.tx_tooltip .thumb .alarm {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-position: 0 -300px;
+    background-image: url(http://static.naver.net/me/new/sp_me_icon_151117.png);
+    background-repeat: no-repeat;
+}
+
+.tx_tooltip .thumb a {
+    background-image: url(http://static.naver.net/me/new/sp_me_icon_151117.png);
+    background-repeat: no-repeat;
+}
+
+.lst_obj .thumb a {
+    background-image: url(http://static.naver.net/me/new/sp_me_icon_151117.png);
+    background-repeat: no-repeat;
+}
+
+.lst_obj .thumb a .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat 0 -290px;
+}
+
+.inpt_area{overflow:hidden;width:570px;margin-bottom:13px;*position:relative}
+.inpt_area.open{margin-bottom:20px}
+.inpt_area .wrt_ans{width:60px;height:27px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat 0 -260px}
+.thrd_contents .inpt_area{width:570px;margin-bottom:0;margin-top:3px}
+.lst_piece + .inpt_area{background:url(http://static.naver.net/me/new/bu_reple.gif) no-repeat 0 8px;width:555px;padding-left:14px}
+.lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt.wrt_mode{width:466px}
+
+
+.frst_contents fieldset.inpt_field .wrt_cmt{float:left;width:543px;padding:12px;font-size:12px;color:#999;height:9px;border:1px solid #dcdcdc;margin-right:6px;overflow:hidden;margin-bottom:0}
+.frst_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:487px;border:1px solid #dcdcdc;color:#333;margin-bottom:0;*width:485px}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:487px;border:1px solid #dcdcdc;color:#333;margin-bottom:0}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode + .send_area{margin-bottom:18px}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt.wrt_mode + .send_area{margin-bottom:26px;}
+.thrd_contents fieldset.inpt_field .wrt_cmt{width:544px;margin-bottom:0}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt{width:526px;margin-bottom:8px}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:484px;margin-right:8px}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt.wrt_mode{width:466px}
+.scnd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{height:28px}
+
+fieldset.inpt_field{overflow:hidden;width:680px;padding-top:8px;*padding-bottom:25px}
+fieldset.inpt_field[class="hide"]{margin-bottom:-10px}
+fieldset.inpt_field .wrt_cmt{float:left;width:544px;padding:11px 12px 12px 12px;font-size:12px;color:#999;height:10px;border:1px solid #dcdcdc;margin-right:6px;overflow:hidden;margin-bottom:15px}
+fieldset.inpt_field .wrt_cmt.wrt_mode{width:486px;border:1px solid #969696;color:#333;margin-bottom:15px}
+fieldset.inpt_field .wrt_cmt.wrt_mode + .send_area{margin-bottom:33px}
+fieldset.inpt_field .send_area{position:relative;float:left}
+fieldset.inpt_field .send_cmt{width:52px;height:35px;border:1px solid #647180;background:#6f7e8e;color:#fff;cursor:pointer}
+fieldset.inpt_field .send_cmt.disabled{background:#c3c3c6;border:1px solid #afafb2}
+fieldset.inpt_field .scrt_tx{position:absolute;bottom:-19px;right:2px;height:14px;line-height:14px;letter-spacing:-1px;font-size:12px;color:#777;*margin-left:-4px;*right:-10px;*width:66px;*bottom:-20px}
+fieldset.inpt_field .scrt_tx input{vertical-align:middle;margin-right:4px;margin-top:-2px;margin-right:2px;*margin-top:-2px;}
+.after_submit{height:33px;border:1px solid #dcdcdc;line-height:34px;text-align:center;color:#555;margin-top:-5px;margin-bottom:20px;*width:570px}
+.frst_contents fieldset.inpt_field .wrt_cmt{float:left;width:543px;padding:12px;font-size:12px;color:#999;height:9px;border:1px solid #dcdcdc;margin-right:6px;overflow:hidden;margin-bottom:0}
+.frst_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:487px;border:1px solid #dcdcdc;color:#333;margin-bottom:0;*width:485px}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:487px;border:1px solid #dcdcdc;color:#333;margin-bottom:0}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode + .send_area{margin-bottom:18px}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt.wrt_mode + .send_area{margin-bottom:26px;}
+.thrd_contents fieldset.inpt_field .wrt_cmt{width:544px;margin-bottom:0}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt{width:526px;margin-bottom:8px}
+.thrd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{width:484px;margin-right:8px}
+.thrd_contents .lst_piece + .inpt_area fieldset.inpt_field .wrt_cmt.wrt_mode{width:466px}
+.scnd_contents fieldset.inpt_field .wrt_cmt.wrt_mode{height:28px}
+.tx_tooltip .del_bubble{position:absolute;right:12px;top:13px;width:20px;height:20px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -197px -38px;border:0}
+.tx_tooltip .env_bubble{display:none}
+.tx_tooltip:hover .env_bubble{display:block;position:absolute;right:34px;top:15px;width:14px;height:14px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -550px -560px;border:0}
+.bx_bg span{display:inline-block;position:absolute;width:15px;height:15px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat}
+.bx_bg span.lft_t{left:-1px;top:-1px;background-position:-160px -710px}
+.bx_bg span.lft_b{left:-1px;bottom:0;background-position:-160px -730px}
+.bx_bg span.rgt_t{right:-1px;top:-1px;background-position:-180px -710px}
+.bx_bg span.rgt_b{right:-1px;bottom:0;background-position:-180px -730px}
+.bx_bg span.bot_shdw{left:14px;bottom:0;width:636px;height:2px;background:url(http://static.naver.net/me/new/txBox_shadow2.gif) repeat-x}
+.bx_bg span.tip_arrow{left:-9px;top:28px;width:9px;height:15px;background-position:-200px 0}
+.bx_bg span.ico_timeDot{left:-29px;top:30px;width:12px;height:12px;background:url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -320px -270px}
+.scnd_contents .daily_obj h4{height:27px;background:url(http://static.naver.net/me/new/ico_time2.png) no-repeat 0 0;padding-left:21px;margin-bottom:0;font-size:14px;color:#333;font-family:dotum;line-height:normal}
+.scnd_contents .daily_obj{background:none}
+.scnd_contents .tx_box_obj{padding-left:0}
+.scnd_contents .bx_bg span.bot_shdw{width:616px}
+.scnd_contents .lst_obj .con_desc h4{font-size:12px;color:#444;font-weight:normal;width:580px}
+.scnd_contents .lst_obj .con_desc{width:auto}
+.scnd_contents .tx_tooltip{margin:22px 0 11px 0}
+.scnd_contents .original_tx{position:relative}
+.scnd_contents .original_tx a{position:absolute;right:2px;bottom:-13px;color:#888}
+.scnd_contents .original_tx a span{display:inline-block;margin-right:4px;width:13px;height:17px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -530px -50px;vertical-align:middle}
+.tx_width .from_user{float:none;height:10px;margin-top:3px;*zoom:1;margin-bottom:7px}
+.tx_width .from_user:after{display:block;clear:both;content:" "}
+.tx_width .from_user span{display:inline-block;float:left;height:10px;line-height:11px;font-size:11px;margin-left:7px;padding-left:7px;border-left:1px solid #e2e2e2;color:#999;}
+.tx_width .from_user span a{color:#999}
+.tx_width .from_user span:first-child{margin-left:0;padding-left:0;border-left:0}
+.tx_width .from_user span:first-child a{color:#444;font-weight:bold}
+.scnd_contents .tx_tooltip .tx_bubble{float:none;padding:0;*zoom:1}
+.scnd_contents .tx_tooltip .tx_bubble:after{display:block;clear:both;content:" "}
+.scnd_contents .tx_tooltip .tx_bubble .reple_cnt{position:relative;border-top:1px solid #ebebeb;padding:18px 0 32px 24px;color:#777}
+.scnd_contents .tx_tooltip .tx_bubble .reple_cnt em{color:#00ba60;font-weight:bold}
+.scnd_contents .tx_tooltip .tx_bubble .reple_input{position:absolute;right:25px;top:18px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_input a{display:inline-block;background:url(http://static.naver.net/me/new/bul_wrte.gif) no-repeat;color:#777;padding-left:18px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst{padding-top:2px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li:first-child.not_reple{margin-top:8px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li.not_reple{background:#ffffe8;*zoom:1}
+.scnd_contents .tx_tooltip .tx_bubble .del_reple{padding:13px 0 12px 24px;color:#999}
+.top_btn_area .updt_obj{position:absolute;right:55px;top:0;font-size:11px;color:#888}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj{float:none;position:relative;*zoom:1;padding:13px 23px 5px 25px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj:after{display:block;clear:both;content:" "}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .user_thumb{display:inline-block;float:left;margin-right:11px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx{overflow:hidden;margin-bottom:4px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt span{display:inline-block;*display:inline;*zoom:1;vertical-align:middle}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .user_id{margin-right:5px;color:#555;font-weight:bold}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .user_id a{color:#555}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .wrt_time{margin-right:5px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send,
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .wrt_time{font-size:11px;color:#999}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send{padding-left:11px;background:url(http://static.naver.net/me/new/btn_reple_bg2.gif) no-repeat 0 1px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send a{color:#999}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send.rvs a{color:#f05765}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .scrt_tx{width:36px;height:18px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -200px -710px;vertical-align:middle;margin-right:7px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd{margin-top:3px;color:#666;line-height:19px;min-height:19px;word-break:break-all}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd a{color:#666}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd .user_nick{margin-right:4px;color:#3aa4b7}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd .user_nick a{color:#3aa4b7}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd .line_sticker{margin-top:3px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple{position:absolute;right:24px;top:18px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span{display:inline-block;border-left:1px solid #dcdcdc;margin-left:7px;padding-left:7px;font-size:11px;letter-spacing:-1px;height:10px}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span:first-child{border-left:0}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span a{color:#999}
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span.reple_cncl a{color:#f05765}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li{border-top:1px solid #f1f1f1}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li:first-child{border-top:0}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li.new_me_rp{background:#f3fbff}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li.by_reple{padding-left:20px;background:url(http://static.naver.net/me/new/bu_reple2.gif) no-repeat 26px 13px;*zoom:1}
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li.by_reple.highlight{background:#ffffe8 url(http://static.naver.net/me/new/bu_reple2.gif) no-repeat 26px 13px;*zoom:1}
+.scnd_contents .reple_cnt + .comment_wrap{margin-top:-8px}
+.scnd_contents .comment_wrap{position:relative;float:none;padding:0 25px 20px 25px;*zoom:1}
+.scnd_contents .comment_wrap:after{display:block;clear:both;content:" "}
+.scnd_contents .comment_wrap .btn_sbt{display:none}
+.scnd_contents .comment_wrap.wrt_mode .wrt_reple{margin-right:59px}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt{display:inline-block;position:absolute;right:25px;top:0}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt .btn_ok{display:inline-block;width:50px;height:33px;border:1px solid #647180;background:#6f7e8e;color:#fff;letter-spacing:-1px}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt .btn_ok.disabled{background:#c3c3c6;border:1px solid #afafb2}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt .btn_ok button{overflow:visible;width:50px;height:33px;color:#fff;}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p{margin-top:5px;color:#777;*width:55px}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p input{margin-right:5px;vertical-align:text-top;width:13px;height:13px}
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p label{vertical-align:-1px;letter-spacing:-1px;}
+.scnd_contents .comment_wrap.wrt_mode{padding-bottom:31px}
+.scnd_contents .reple_info{overflow:hidden;position:relative;padding-top:16px}
+.scnd_contents .reple_info .reple_more{float:right;margin-right:20px;margin-bottom:1px;position:relative}
+.scnd_contents .reple_info button.btn_reload{display:inline-block;width:30px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -160px -40px;border:0;height:29px;margin-left:1px;vertical-align:top}
+.scnd_contents .reple_info .rp_cnt{float:left;padding-left:25px;color:#777;padding-top:9px}
+.scnd_contents .reple_info .rp_cnt em{color:#00ba60;font-weight:bold}
+.scnd_contents .reple_info .loading_area{position:absolute;left:50%;top:25px;margin:0;*left:0}
+.scnd_contents .reple_info .loading_area p{background:url(http://static.naver.net/me/new/loading_w.gif) no-repeat}
+.scnd_contents .reple_more .me_btn.more{padding:0 6px 0 0}
+.scnd_contents .reple_info .ico_obj_rp{display:inline-block;position:absolute;right:-5px;top:-3px;width:14px;height:14px;background:url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -420px -210px}
+.scnd_contents .reple_more .me_btn{*height:27px;*margin-right:5px}
+.scnd_contents .reple_more .me_btn button{font-weight:bold;letter-spacing:-1px;color:#777;*margin-left:10px}
+.scnd_contents .reple_more .ico1{display:inline-block;width:12px;height:14px;background:url(http://static.naver.net/me/new/bul_reple_more.gif) no-repeat 0 0;margin-left:3px;vertical-align: text-top;}
+.scnd_contents .reple_lst li.not_reple .comment_wrap{background:url(http://static.naver.net/me/new/bu_reple2.gif) no-repeat 66px 0;padding-top:0;padding-left:80px;border-top:0;margin-top:0}
+.scnd_contents .reple_lst li.not_reple .comment_wrap .btn_sbt{top:0}
+.scnd_contents .wrt_reple{position:relative;border:1px solid #dcdcdc;padding:11px 0 6px 0;background:#fff}
+.scnd_contents .wrt_reple .txarea_wrap{/*margin-left:38px*/padding:0 9px;}
+.scnd_contents .wrt_reple .txarea_wrap textarea{width:100%;resize:none;border:0;outline:none;overflow:auto;color:#999;overflow:hidden;white-space:pre}
+.scnd_contents .wrt_reple .txarea_wrap textarea.wrt_mode{color:#000}
+.scnd_contents .wrt_reple .btn_sticker{position:absolute;left:0;bottom:0;top:0;width:37px;border-right:1px solid #dcdcdc}
+.scnd_contents .wrt_reple .btn_sticker a{display:inline-block;position:absolute;left:0;top:0;width:37px;height:33px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat 0 -710px}
+.scnd_contents .time_line{padding:25px 20px 25px 20px}
+.scnd_contents .tx_tooltip .del_bubble{right:17px;top:18px}
+.scnd_contents .tx_box_obj{margin-top:12px}
+.scnd_contents .daily_obj ul >li:first-child .tx_box_obj{margin-top:0}
+.spam_guard{overflow:hidden;padding-top:20px}
+.thrd_contents .spam_guard,
+.frth_contents .spam_guard{border-top:1px solid #eaeaea;margin:15px 0}
+.frst_contents .spam_guard{border-top:1px solid #eaeaea}
+
+
+.con_desc .frm_svc{margin-top:6px;float:none;height:10px;line-height:10px;*zoom:1;*line-height:12px}
+.con_desc .frm_svc:after{display:block;clear:both;content:" "}
+.con_desc .frm_svc span{display:inline-block;float:left;height:10px;border-left:1px solid #dbdbdb;margin-left:5px;padding-left:5px;font-size:11px;color:#a1a1a1}
+.con_desc .frm_svc span.etc{border-left:0;margin-left:0}
+.con_desc .frm_svc span a{color:#a1a1a1}
+.con_desc .frm_svc span.h_title a{color:#3aa4b7;font-weight:bold}
+.con_desc .frm_svc span.svc_name a{color:#3aa4b7}
+.con_desc .frm_svc span:first-child{border-left:0;margin-left:0;padding-left:0}
+.con_desc .lst_type1 .thumbs_tx{margin-top:8px;line-height:17px;color:#373737;font-size:12px}
+.con_desc .lst_type1 .thumbs_tx a{word-wrap:break-word;color:#373737}
+.con_desc .lst_type1 ul.thusb_lst{overflow:hidden;margin-top:8px}
+.con_desc .lst_type1 .thusb_lst li{float:left;margin-left:5px}
+.con_desc .lst_type1 .thusb_lst li:first-child{margin-left:0}
+.con_desc .lst_type1 .thusb_lst li a{display:inline-block}
+.con_desc .lst_type1 .thusb_lst li a img{border:1px solid #e3e3e3;background:url(http://static.naver.net/me/tx_thumb_alt.png) 50% 50%}
+.con_desc .lst_type2 .thumbs_tx{margin:8px 0 10px 0;line-height:17px;color:#373737;font-size:12px}
+.con_desc .lst_type2 .thumbs_tx a{color:#373737}
+.con_desc .lst_type2 .me2day_tag{margin:-8px 0 10px 0;font-size:11px;color:#999}
+.con_desc .lst_type2 .me2day_tag a{color:#999}
+.con_desc .user_reple{position:relative;width:570px;margin-top:20px}
+.con_desc .user_reple h5{margin-bottom:11px;padding-left:5px;font-size:12px;color:#777;font-weight:normal}
+.con_desc .user_reple h5 a{color:#f05765;font-weight:bold}
+.lst_area li.nlst_checked .con_desc .user_reple h5 a{color:#f05765 !important}
+.con_desc .user_reple li{position:relative;margin-top:7px;padding:11px 5px 0 4px;border-top:1px solid #eaeaea;*padding-top:0;*margin-top:0;*margin-bottom:9px}
+.con_desc .user_reple li .fd_del{position:absolute;z-index:20;top:0;right:6px;width:16px;height:25px;background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -337px -250px}
+.con_desc .user_reple li:first-child{margin-top:0}
+.con_desc .user_reple li dt{display:block;margin-bottom:3px}
+.con_desc .user_reple li dt a{display:inline-block;margin-right:5px;color:#555;font-weight:bold}
+.lst_area li.nlst_checked .con_desc .user_reple li dt a{color:#555 !important}
+.con_desc .user_reple li dt .wrt_time{display:inline-block;margin-right:5px;color:#999;font-size:11px}
+.con_desc .user_reple li dt .to_reple{display:inline-block;padding-left:12px;background:url(http://static.naver.net/me/new/btn_reple_bg2.gif) no-repeat 0 4px;color:#999;font-size:11px}
+.con_desc .user_reple li dt .to_reple:hover{text-decoration:underline}
+.con_desc .user_reple li dd{color:#666;line-height:17px;word-wrap:break-word}
+.lst_area li.nlst_checked .con_desc .user_reple li dd a{color:#666 !important}
+.con_desc .user_reple .reple_more{position:absolute;top:0;right:0}
+.con_desc .user_reple .reple_more a{color:#777;text-decoration:underline}
+.lst_area li.nlst_checked .con_desc .user_reple .reple_more a{color:#777 !important}
+.con_desc .img_thumb span{display:block;width:100px;word-break:break-all;line-height:15px;margin-top:2px}
+.con_desc .img_thumb a{color:#333}
+.con_desc .lst_type2{float:none;margin-top:12px;*zoom:1}
+.con_desc .lst_type2:after{display:block;clear:both;content:" "}
+.con_desc .lst_type2 .img_thumb{float:left;position:relative;margin-right:15px}
+.con_desc .lst_type2 .img_thumb a{display:inline-block}
+.con_desc .lst_type2 .img_thumb a span.ico_mv{position:absolute;bottom:8px;left:5px;width:27px;height:27px;background:url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -290px -290px}
+.con_desc .lst_type2 .img_thumb a img{border:1px solid #e3e3e3}
+.con_desc .lst_type2 .rgt_dsc{overflow:hidden}
+.con_desc .after_zoom{clear:both;padding-top:12px}
+.con_desc .lst_type2 .rgt_dsc .fd_cont{line-height:18px}
+.con_desc .lst_type2 .rgt_dsc .fd_cont .wrt_time{display:inline-block;margin-left:6px;font-size:11px;color:#a1a1a1;font-weight:normal}
+.con_desc .lst_type2 .rgt_dsc .fd_cont a{color:#333}
+.con_desc .lst_type2 .rgt_dsc .fd_cont a .ico_top{display:inline-block;width:18px;height:11px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -510px -50px;margin-right:5px;vertical-align:middle;margin-top:-3px}
+.con_desc .lst_type2 .rgt_dsc .fd_cont .top_news{margin-bottom:10px;font-size:14px}
+.con_desc .lst_type2 .rgt_dsc + .news_lst{clear:both;padding-top:10px}
+.con_desc .lst_type2 .news_lst li{position:relative;margin-top:3px}
+.con_desc .lst_type2 .news_lst li:first-child{margin-top:0}
+.con_desc .lst_type2 .news_lst li a{display:inline-block;overflow:hidden;max-width:100%;padding-left:6px;line-height:18px;color:#333;white-space:nowrap;text-overflow:ellipsis}
+.con_desc .lst_type2 .news_lst .bu{display:inline-block;position:absolute;top:7px;left:0;width:2px;height:2px;background:url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat -2070px -50px}
+.con_desc .lst_type2 .btn_area{clear:both;padding-top:5px}
+.con_desc .lst_type4{margin-top:12px}
+.con_desc .lst_type4 ul{overflow:hidden}
+.con_desc .lst_type4 ul li{float:left;margin-left:12px}
+.con_desc .lst_type4 ul li:first-child{margin-left:0}
+.con_desc .lst_type4 ul li a{display:inline-block;width:90px;color:#333}
+.con_desc .lst_type4 ul li a span{display:block;font-size:11px;letter-spacing:-1px;line-height:14px}
+.con_desc .lst_type4 ul li a span .tx_strike{text-decoration:line-through;color:#999}
+.con_desc .lst_type4 ul li a span em{display:block}
+.con_desc .img_thumb + .btn_area{margin-top:7px}
+.con_desc .btn_area{float:none;margin-top:10px;*zoom:1}
+.con_desc .btn_area:after{display:block;clear:both;content:" "}
+.con_desc .btn_area{margin-top:10px;position:relative}
+.con_desc .btn_area .me2_id{display:inline-block;height:29px;line-height:33px;font-size:11px}
+.con_desc .btn_area .me2_id a{color:#725bbc}
+.con_desc .btn_area button{float:left;margin-right:5px;position:relative;height:29px;padding-right:8px;border:0;background:url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;padding-left:8px;line-height:30px;*padding-right:5px;*padding-left:5px;*line-height:15px}
+.con_desc .btn_area button span.frnt{display:inline-block;width:3px;height:29px;background:url(http://static.naver.net/me/new/btn_bg.png) no-repeat 0 0;margin-right:5px;vertical-align:middle;position:absolute;left:0;top:0}
+.con_desc .btn_area button .tx_node{display:inline-block;position:relative;top:0;*top:7px;background:url(http://static.naver.net/me/new/btn_arr.gif) no-repeat 100% 3px;padding-right:10px;*display:block;*padding-right:0;color:#555}
+.con_desc .btn_area button .tx_node .cnt{display:inline-block;position:relative;left:2px;color:#f05765 !important;font-weight:bold;font-size:11px;padding-right:3px}
+.con_desc .btn_area button.btn_reple .tx_node{background:none;padding-right:0}
+.con_desc .btn_area button.btn_reple .tx_node .cnt{display:none;margin-right:0}
+.con_desc .btn_area button.btn_reple.has_cnt .tx_node{display:inline-block;*display:block}
+.con_desc .btn_area button.btn_reple .tx_node.reple_show,
+.con_desc .lst_type1 .btn_area button.btn_reple.has_cnt .tx_node.reple_show{background:url(http://static.naver.net/me/new/btn_arr.gif) no-repeat 100% 11px;*background-position:100% 5px;padding-right:10px;*padding-right:0;*margin-right:10px}
+.con_desc .btn_area button.btn_reple.has_cnt .cnt{display:inline-block}
+.con_desc .btn_area button.btn_sympathy .tx_node{background:none;padding-right:0}
+.con_desc .btn_area button.btn_sympathy .tx_node .cnt{padding-right:3px}
+.con_desc .btn_area button.btn_me_too .tx_node{background:url(http://static.naver.net/me/new/ico_me2.png) no-repeat 0 0;padding-left:15px;height:14px;padding-right:0;*white-space:nowrap;color:#555;line-height:16px}
+.con_desc .btn_area button.btn_fd_cancel{width:61px;height:29px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -170px -290px}
+.con_desc .btn_area button.btn_ans{width:61px;height:29px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -100px -290px}
+.con_desc .btn_area button.btn_ans{width:61px;height:29px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -100px -290px}
+.con_desc .btn_area button.btn_rd_cncl{width:61px;height:29px;background:url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -170px -290px}
+.control_box.font .btn_area{margin-top:15px;text-align:center}
+.control_box.font .btn_area button{margin-right:5px;position:relative;height:29px;padding-right:8px;border:0;background:url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;padding-left:8px;line-height:30px;*padding-right:5px;*padding-left:5px;*line-height:15px}
+.control_box.font .btn_area button span.frnt{display:inline-block;width:3px;height:29px;background:url(http://static.naver.net/me/new/btn_bg.png) no-repeat 0 0;margin-right:5px;vertical-align:middle;position:absolute;left:0;top:0}
+.control_box.font .btn_area button .tx_node{display:inline-block;position:relative;top:0;*top:7px;*display:block;*padding-right:0;color:#555}
+.con_desc .img_thumb_lst{overflow:hidden;margin-top:16px;margin-bottom:10px}
+.con_desc .img_thumb_lst li{float:left;margin-left:12px}
+.con_desc .img_thumb_lst li:first-child{margin-left:0}
+.con_desc .img_thumb_lst li a{display:inline-block;overflow:hidden;width:100px;color:#333}
+.con_desc .img_thumb_lst li a img{border:1px solid #e3e3e3}
+.con_desc .img_thumb_lst li a span{display:inline-block;overflow:hidden;text-overflow:ellipsis;max-width:100%;white-space:nowrap;margin-top:5px}
+.con_desc .rgt_dsc .fd_cont{line-height:18px}
+.con_desc .rgt_dsc .fd_cont a{color:#333}
+.con_desc .w_tb{margin-top:12px;border:1px solid #dcdddd;border-collapse:collapse;background:#fff}
+.con_desc .w_tb td{padding:4px 10px 3px;border:1px solid #dcdddd;font-size:12px;color:#333;vertical-align:middle;white-space:nowrap}
+.con_desc .w_tb th{padding:0 10px;font-weight:normal;text-align:left}
+.con_desc .w_tb th .date{display:block;font-family:tahoma,sans-serif;font-size:10px;color:#999}
+.con_desc .w_tb td.ico{border-right:0}
+.con_desc .w_tb td.ico img{border:0;background:none}
+.con_desc .w_tb td.info{width:165px;padding-left:0;border-left:0;line-height:17px}
+.con_desc .w_tb td.info p{color:#333}
+.con_desc .w_tb td.info .temp{color:#f36000}
+.con_desc .cont_info{display:block;overflow:hidden;padding-top:4px;font-size:11px;line-height:13px;color:#333}
+
+
+
+.tx_tooltip .thumb a .mask, .tx_tooltip .thumb .alarm .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat 0 -290px;
+}
+
+.tx_tooltip .bubble_content .tx_width span.linkTx a {
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .tx_width span.linkTx a:hover {
+    text-decoration: underline;
+}
+
+.tx_tooltip .bubble_content .tx_width span.etc_obj a {
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .tx_width .alarm_tx a {
+    color: #000;
+}
+
+.tx_tooltip .bubble_content .from_obj dt {
+    display: block;
+    float: left;
+    clear: left;
+    font-size: 11px;
+    color: #555;
+}
+
+.tx_tooltip .bubble_content .from_obj dd {
+    font-size: 11px;
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .from_obj dd a {
+    font-size: 11px;
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .from_obj dd span {
+    display: inline-block;
+    height: 10px;
+    line-height: 10px;
+    border-left: 1px solid #e2e2e2;
+    padding-left: 7px;
+    margin-left: 4px;
+    *line-height: 11px;
+}
+
+.tx_tooltip .bubble_content .from_obj dd span:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.tx_tooltip .bubble_content .from_obj dd span em {
+    display: inline-block;
+    margin-left: 8px;
+    color: #f3250f;
+    letter-spacing: -1px;
+}
+
+.tx_tooltip .bubble_content .from_obj dd span + span > em {
+    margin-left: 0;
+}
+
+.tx_tooltip .bubble_content .tx_width .cmt_area .favicon img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.tx_tooltip .bubble_content .tx_width .cmt_area > a {
+    color: #000;
+}
+
+.tx_tooltip .bubble_content .tx_width .etc_link .writer, .tx_tooltip .bubble_content .tx_width .etc_link a {
+    display: inline-block;
+    color: #777;
+}
+
+.tx_tooltip .bubble_content .tx_width .etc_link .writer {
+    margin-left: 5px;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span {
+    display: inline-block;
+    float: left;
+    height: 10px;
+    line-height: 11px;
+    font-size: 11px;
+    margin-left: 7px;
+    padding-left: 7px;
+    border-left: 1px solid #e2e2e2;
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span a {
+    display: inline-block;
+    margin-right: 4px;
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span:first-child {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    color: #3aa4b7;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span:first-child[class="wrt_time"] {
+    color: #999;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span:first-child a {
+    color: #3aa4b7;
+    font-weight: bold;
+}
+
+.tx_tooltip .bubble_content .tx_width .from_cmt span.frm_title em {
+    color: #3aa4b7;
+    font-weight: bold;
+}
+
+fieldset.inpt_field .scrt_tx input {
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -2px;
+    margin-right: 2px;
+    *margin-top: -2px;
+}
+
+.bx_bg span {
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+}
+
+.scnd_contents .daily_obj h4 {
+    height: 27px;
+    background: url(http://static.naver.net/me/new/ico_time2.png) no-repeat 0 0;
+    padding-left: 21px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #333;
+    font-family: dotum;
+    line-height: normal;
+}
+
+.scnd_contents .lst_obj .con_desc {
+    width: auto;
+}
+
+.scnd_contents .lst_obj .con_desc h4 {
+    font-size: 12px;
+    color: #444;
+    font-weight: normal;
+    width: 580px;
+}
+
+.scnd_contents .original_tx a {
+    position: absolute;
+    right: 2px;
+    bottom: -13px;
+    color: #888;
+}
+
+.scnd_contents .original_tx a span {
+    display: inline-block;
+    margin-right: 4px;
+    width: 13px;
+    height: 17px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -530px -50px;
+    vertical-align: middle;
+}
+
+.tx_width .from_user span {
+    display: inline-block;
+    float: left;
+    height: 10px;
+    line-height: 11px;
+    font-size: 11px;
+    margin-left: 7px;
+    padding-left: 7px;
+    border-left: 1px solid #e2e2e2;
+    color: #999;
+}
+
+.tx_width .from_user span a {
+    color: #999;
+}
+
+.tx_width .from_user span:first-child {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+}
+
+.tx_width .from_user span:first-child a {
+    color: #444;
+    font-weight: bold;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_cnt em {
+    color: #00ba60;
+    font-weight: bold;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_input a {
+    display: inline-block;
+    background: url(http://static.naver.net/me/new/bul_wrte.gif) no-repeat;
+    color: #777;
+    padding-left: 18px;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .user_id a {
+    color: #555;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .wrt_time {
+    margin-right: 5px;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send a {
+    color: #999;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dt .re_send.rvs a {
+    color: #f05765;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd {
+    margin-top: 3px;
+    color: #666;
+    line-height: 19px;
+    min-height: 19px;
+    word-break: break-all;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd a {
+    color: #666;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .reple_bx dd .user_nick a {
+    color: #3aa4b7;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span {
+    display: inline-block;
+    border-left: 1px solid #dcdcdc;
+    margin-left: 7px;
+    padding-left: 7px;
+    font-size: 11px;
+    letter-spacing: -1px;
+    height: 10px;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span:first-child {
+    border-left: 0;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span a {
+    color: #999;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_obj .edit_reple span.reple_cncl a {
+    color: #f05765;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li {
+    border-top: 1px solid #f1f1f1;
+}
+
+.scnd_contents .tx_tooltip .tx_bubble .reple_lst li:first-child {
+    border-top: 0;
+}
+
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt .btn_ok button {
+    overflow: visible;
+    width: 50px;
+    height: 33px;
+    color: #fff;
+}
+
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p {
+    margin-top: 5px;
+    color: #777;
+    *width: 55px;
+}
+
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p input {
+    margin-right: 5px;
+    vertical-align: text-top;
+    width: 13px;
+    height: 13px;
+}
+
+.scnd_contents .comment_wrap.wrt_mode .btn_sbt p label {
+    vertical-align: -1px;
+    letter-spacing: -1px;
+}
+
+.scnd_contents .reple_info button.btn_reload {
+    display: inline-block;
+    width: 30px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -160px -40px;
+    border: 0;
+    height: 29px;
+    margin-left: 1px;
+    vertical-align: top;
+}
+
+.scnd_contents .reple_info .rp_cnt em {
+    color: #00ba60;
+    font-weight: bold;
+}
+
+.scnd_contents .reple_info .loading_area p {
+    background: url(http://static.naver.net/me/new/loading_w.gif) no-repeat;
+}
+
+.scnd_contents .reple_more .me_btn.more {
+    padding: 0 6px 0 0;
+}
+
+.scnd_contents .reple_more .me_btn {
+    *height: 27px;
+    *margin-right: 5px;
+}
+
+.scnd_contents .reple_more .me_btn button {
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: #777;
+    *margin-left: 10px;
+}
+
+.scnd_contents .reple_more .ico1 {
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    background: url(http://static.naver.net/me/new/bul_reple_more.gif) no-repeat 0 0;
+    margin-left: 3px;
+    vertical-align: text-top;
+}
+
+.scnd_contents .wrt_reple .txarea_wrap textarea {
+    width: 100%;
+    resize: none;
+    border: 0;
+    outline: none;
+    overflow: auto;
+    color: #999;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.scnd_contents .wrt_reple .btn_sticker a {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 37px;
+    height: 33px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat 0 -710px;
+}
+
+.scnd_contents .time_line {
+    padding: 25px 20px 25px 20px;
+}
+
+.lst_area li.nlst_checked .spam_guard .h_scrt strong {
+    color: #666 !important;
+}
+
+.spam_guard .scrt_info .ipt_code .me_btn {
+    margin-left: 1px;
+    vertical-align: middle;
+    padding: 0 8px 0 0;
+}
+
+.spam_guard .scrt_info .ipt_code .me_btn:before {
+    margin-right: 5px;
+}
+
+.spam_guard .scrt_info .code_cfm span {
+    display: inline-block;
+}
+
+.spam_guard .scrt_info .code_cfm .refresh_code a {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: -1px;
+    text-decoration: underline;
+}
+
+.lst_area > ul > li {
+    border-top: 1px solid #eaeaea;
+    padding: 25px 25px 24px 25px;
+}
+
+.lst_area > ul > li:first-child {
+    border-top: 0;
+}
+
+.go_reple a {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: -1px;
+}
+
+.lst_obj {
+    float: none;
+    *zoom: 1;
+    position: relative;
+    min-height: 70px;
+}
+
+.lst_obj.nlst_checked a, .lst_obj.nlst_checked em {
+    color: #999 !important;
+}
+
+.lst_obj:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.lst_obj .thumb {
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+.lst_obj .thumb a {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+}
+
+.lst_obj .desc_bx {
+    position: relative;
+    margin-left: 54px;
+}
+
+.lst_obj.current {
+    *z-index: 60;
+}
+
+.lst_obj.current .desc_bx {
+    *z-index: 60;
+}
+
+.lst_obj .con_desc {
+    width: 600px;
+}
+
+.lst_obj .con_desc h4 {
+    position: relative;
+    font-size: 14px;
+    color: #373737;
+    line-height: 20px;
+    word-break: break-all;
+}
+
+.lst_obj .con_desc h4 a {
+    position: relative;
+    color: #444;
+    word-break: break-all;
+}
+
+.fifth_contents .lst_obj .thumb + .desc_bx .con_desc h4 {
+    height: 20px;
+    margin-bottom: 1px;
+}
+
+.fifth_contents .lst_obj .con_desc h4 a {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.lst_obj .con_desc h4 span, .lst_obj .con_desc .thumbs_tx span {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 11px;
+    color: #a1a1a1;
+    font-weight: normal;
+}
+
+.lst_obj .con_desc h4 span.wrt_time {
+    vertical-align: top;
+}
+
+.lst_obj .btn_act a {
+    display: inline-block;
+    padding: 3px 5px 2px 4px;
+    line-height: 13px;
+    font-size: 11px;
+    color: #bababa;
+    letter-spacing: -1px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.lst_obj .btn_act a:hover {
+    padding: 2px 4px 1px 3px;
+    border: 1px solid #c5c5c5;
+    color: #333;
+    text-decoration: none;
+}
+
+.lst_obj .feed_del {
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 12px;
+    height: 11px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -100px -710px;
+}
+
+.scnd_contents .lst_obj .feed_del {
+    right: 5px;
+    top: 5px;
+}
+
+.con_desc .frm_svc {
+    margin-top: 6px;
+    float: none;
+    height: 10px;
+    line-height: 10px;
+    *zoom: 1;
+    *line-height: 12px;
+}
+
+.con_desc .frm_svc:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.con_desc .frm_svc span {
+    display: inline-block;
+    float: left;
+    height: 10px;
+    border-left: 1px solid #dbdbdb;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 11px;
+    color: #a1a1a1;
+}
+
+.con_desc .frm_svc span.etc {
+    border-left: 0;
+    margin-left: 0;
+}
+
+.con_desc .frm_svc span a {
+    color: #a1a1a1;
+}
+
+.con_desc .frm_svc span.h_title a {
+    color: #3aa4b7;
+    font-weight: bold;
+}
+
+.con_desc .frm_svc span.svc_name a {
+    color: #3aa4b7;
+}
+
+.con_desc .frm_svc span:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.con_desc .lst_type1 .thumbs_tx {
+    margin-top: 8px;
+    line-height: 17px;
+    color: #373737;
+    font-size: 12px;
+}
+
+.con_desc .lst_type1 .thumbs_tx a {
+    word-wrap: break-word;
+    color: #373737;
+}
+
+.con_desc .lst_type1 ul.thusb_lst {
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.con_desc .lst_type1 .thusb_lst li {
+    float: left;
+    margin-left: 5px;
+}
+
+.con_desc .lst_type1 .thusb_lst li:first-child {
+    margin-left: 0;
+}
+
+.con_desc .lst_type1 .thusb_lst li a {
+    display: inline-block;
+}
+
+.con_desc .lst_type1 .thusb_lst li a img {
+    border: 1px solid #e3e3e3;
+    background: url(http://static.naver.net/me/tx_thumb_alt.png) 50% 50%;
+}
+
+.con_desc .lst_type2 .thumbs_tx {
+    margin: 8px 0 10px 0;
+    line-height: 17px;
+    color: #373737;
+    font-size: 12px;
+}
+
+.con_desc .lst_type2 .thumbs_tx a {
+    color: #373737;
+}
+
+.con_desc .lst_type2 .me2day_tag a {
+    color: #999;
+}
+
+.con_desc .user_reple {
+    position: relative;
+    width: 570px;
+    margin-top: 20px;
+}
+
+.con_desc .user_reple h5 {
+    margin-bottom: 11px;
+    padding-left: 5px;
+    font-size: 12px;
+    color: #777;
+    font-weight: normal;
+}
+
+.con_desc .user_reple h5 a {
+    color: #f05765;
+    font-weight: bold;
+}
+
+.lst_area li.nlst_checked .con_desc .user_reple h5 a {
+    color: #f05765 !important;
+}
+
+.con_desc .user_reple li {
+    position: relative;
+    margin-top: 7px;
+    padding: 11px 5px 0 4px;
+    border-top: 1px solid #eaeaea;
+    *padding-top: 0;
+    *margin-top: 0;
+    *margin-bottom: 9px;
+}
+
+.con_desc .user_reple li:first-child {
+    margin-top: 0;
+}
+
+.con_desc .user_reple li dt {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.con_desc .user_reple li dt a {
+    display: inline-block;
+    margin-right: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.lst_area li.nlst_checked .con_desc .user_reple li dt a {
+    color: #555 !important;
+}
+
+.con_desc .user_reple li dt .wrt_time {
+    display: inline-block;
+    margin-right: 5px;
+    color: #999;
+    font-size: 11px;
+}
+
+.con_desc .user_reple li dd {
+    color: #666;
+    line-height: 17px;
+    word-wrap: break-word;
+}
+
+.lst_area li.nlst_checked .con_desc .user_reple li dd a {
+    color: #666 !important;
+}
+
+.con_desc .user_reple .reple_more a {
+    color: #777;
+    text-decoration: underline;
+}
+
+.lst_area li.nlst_checked .con_desc .user_reple .reple_more a {
+    color: #777 !important;
+}
+
+.con_desc .img_thumb span {
+    display: block;
+    width: 100px;
+    word-break: break-all;
+    line-height: 15px;
+    margin-top: 2px;
+}
+
+.con_desc .img_thumb a {
+    color: #333;
+}
+
+.con_desc .lst_type2 {
+    float: none;
+    margin-top: 12px;
+    *zoom: 1;
+}
+
+.con_desc .lst_type2:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.con_desc .lst_type2 .img_thumb {
+    float: left;
+    position: relative;
+    margin-right: 15px;
+}
+
+.con_desc .lst_type2 .img_thumb a {
+    display: inline-block;
+}
+
+.con_desc .lst_type2 .img_thumb a img {
+    border: 1px solid #e3e3e3;
+}
+
+.con_desc .lst_type2 .rgt_dsc {
+    overflow: hidden;
+}
+
+.con_desc .lst_type2 .rgt_dsc .fd_cont {
+    line-height: 18px;
+}
+
+.con_desc .lst_type2 .rgt_dsc .fd_cont .wrt_time {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 11px;
+    color: #a1a1a1;
+    font-weight: normal;
+}
+
+.con_desc .lst_type2 .rgt_dsc .fd_cont a {
+    color: #333;
+}
+
+.con_desc .lst_type2 .news_lst li {
+    position: relative;
+    margin-top: 3px;
+}
+
+.con_desc .lst_type2 .news_lst li:first-child {
+    margin-top: 0;
+}
+
+.con_desc .lst_type2 .news_lst li a {
+    display: inline-block;
+    overflow: hidden;
+    max-width: 100%;
+    padding-left: 6px;
+    line-height: 18px;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.con_desc .lst_type2 .news_lst .bu {
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat -2070px -50px;
+}
+
+.con_desc .lst_type2 .btn_area {
+    clear: both;
+    padding-top: 5px;
+}
+
+.con_desc .lst_type4 ul {
+    overflow: hidden;
+}
+
+.con_desc .lst_type4 ul li {
+    float: left;
+    margin-left: 12px;
+}
+
+.con_desc .lst_type4 ul li:first-child {
+    margin-left: 0;
+}
+
+.con_desc .lst_type4 ul li a {
+    display: inline-block;
+    width: 90px;
+    color: #333;
+}
+
+.con_desc .lst_type4 ul li a span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 14px;
+}
+
+.con_desc .lst_type4 ul li a span em {
+    display: block;
+}
+
+.con_desc .img_thumb + .btn_area {
+    margin-top: 7px;
+}
+
+.con_desc .btn_area {
+    float: none;
+    margin-top: 10px;
+    *zoom: 1;
+    margin-top: 10px;
+    position: relative;
+}
+
+.con_desc .btn_area:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.con_desc .btn_area .me2_id a {
+    color: #725bbc;
+}
+
+.con_desc .btn_area button {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    height: 29px;
+    padding-right: 8px;
+    border: 0;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;
+    padding-left: 8px;
+    line-height: 30px;
+    *padding-right: 5px;
+    *padding-left: 5px;
+    *line-height: 15px;
+}
+
+.con_desc .btn_area button span.frnt {
+    display: inline-block;
+    width: 3px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 0 0;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.con_desc .btn_area button .tx_node {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    *top: 7px;
+    background: url(http://static.naver.net/me/new/btn_arr.gif) no-repeat 100% 3px;
+    padding-right: 10px;
+    *display: block;
+    *padding-right: 0;
+    color: #555;
+}
+
+.con_desc .btn_area button .tx_node .cnt {
+    display: inline-block;
+    position: relative;
+    left: 2px;
+    color: #f05765 !important;
+    font-weight: bold;
+    font-size: 11px;
+    padding-right: 3px;
+}
+
+.con_desc .btn_area button.btn_reple .tx_node {
+    background: none;
+    padding-right: 0;
+}
+
+.con_desc .btn_area button.btn_reple .tx_node .cnt {
+    display: none;
+    margin-right: 0;
+}
+
+.con_desc .btn_area button.btn_reple.has_cnt .tx_node {
+    display: inline-block;
+    *display: block;
+}
+
+.con_desc .btn_area button.btn_reple.has_cnt .cnt {
+    display: inline-block;
+}
+
+.con_desc .btn_area button.btn_sympathy .tx_node {
+    background: none;
+    padding-right: 0;
+}
+
+.con_desc .btn_area button.btn_sympathy .tx_node .cnt {
+    padding-right: 3px;
+}
+
+.con_desc .btn_area button.btn_me_too .tx_node {
+    background: url(http://static.naver.net/me/new/ico_me2.png) no-repeat 0 0;
+    padding-left: 15px;
+    height: 14px;
+    padding-right: 0;
+    *white-space: nowrap;
+    color: #555;
+    line-height: 16px;
+}
+
+.control_box.font .btn_area {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.control_box.font .btn_area button {
+    margin-right: 5px;
+    position: relative;
+    height: 29px;
+    padding-right: 8px;
+    border: 0;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;
+    padding-left: 8px;
+    line-height: 30px;
+    *padding-right: 5px;
+    *padding-left: 5px;
+    *line-height: 15px;
+}
+
+.control_box.font .btn_area button span.frnt {
+    display: inline-block;
+    width: 3px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 0 0;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.control_box.font .btn_area button .tx_node {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    *top: 7px;
+    *display: block;
+    *padding-right: 0;
+    color: #555;
+}
+
+.con_desc .img_thumb_lst li {
+    float: left;
+    margin-left: 12px;
+}
+
+.con_desc .img_thumb_lst li:first-child {
+    margin-left: 0;
+}
+
+.con_desc .img_thumb_lst li a {
+    display: inline-block;
+    overflow: hidden;
+    width: 100px;
+    color: #333;
+}
+
+.con_desc .img_thumb_lst li a img {
+    border: 1px solid #e3e3e3;
+}
+
+.con_desc .img_thumb_lst li a span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+
+.con_desc .rgt_dsc .fd_cont {
+    line-height: 18px;
+}
+
+.con_desc .rgt_dsc .fd_cont a {
+    color: #333;
+}
+
+.con_desc .w_tb td {
+    padding: 4px 10px 3px;
+    border: 1px solid #dcdddd;
+    font-size: 12px;
+    color: #333;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.con_desc .w_tb th {
+    padding: 0 10px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.con_desc .w_tb th .date {
+    display: block;
+    font-family: tahoma, sans-serif;
+    font-size: 10px;
+    color: #999;
+}
+
+.con_desc .w_tb td.ico {
+    border-right: 0;
+}
+
+.con_desc .w_tb td.ico img {
+    border: 0;
+    background: none;
+}
+
+.con_desc .w_tb td.info {
+    width: 165px;
+    padding-left: 0;
+    border-left: 0;
+    line-height: 17px;
+}
+
+.con_desc .w_tb td.info p {
+    color: #333;
+}
+
+.con_desc .w_tb td.info .temp {
+    color: #f36000;
+}
+
+.info_prodct dt {
+    display: block;
+    float: left;
+    clear: left;
+    color: #999;
+    line-height: 19px;
+}
+
+.info_prodct dd {
+    margin-left: 60px;
+    line-height: 19px;
+    color: #373737;
+}
+
+.info_prodct dd .emphasis {
+    color: #f36000;
+}
+
+.info_prodct dd .emphasis a {
+    color: #f36000;
+}
+
+.emphasis {
+    color: #f36000 !important;
+}
+
+.ly_cafe {
+    position: absolute;
+    left: 16px;
+    top: 44px;
+    width: 408px;
+    height: 302px;
+    border: 1px solid #5c616e;
+    background: #fff;
+    z-index: 40;
+}
+
+.ly_cafe .empty_result strong {
+    font-size: 14px;
+    color: #2d2d2d;
+    line-height: 20px;
+}
+
+.ly_cafe .empty_result strong em {
+    color: #26b71d;
+}
+
+.ly_cafe .empty_result p {
+    margin-top: 7px;
+    margin-bottom: 11px;
+    color: #666;
+    line-height: 17px;
+}
+
+.cafe_lst li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 352px;
+}
+
+.cafe_lst label {
+    cursor: pointer;
+}
+
+.out_lst > li {
+    margin-top: 16px;
+    color: #555;
+    font-size: 12px;
+    *zoom: 1;
+}
+
+.out_lst > li:first-child {
+    margin-top: 21px;
+    line-height: 16px;
+    *line-height: 12px;
+}
+
+.out_lst > li input {
+    margin-right: 8px;
+    margin-top: -3px;
+    vertical-align: middle;
+}
+
+.out_lst > li p {
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: -1px;
+    font-weight: bold;
+    color: #333;
+    line-height: 15px;
+    height: 16px;
+}
+
+.in_lst li {
+    margin-top: 8px;
+    height: 15px;
+    line-height: 16px;
+    *zoom: 1;
+    *line-height: 12px;
+}
+
+.cafe_btn button {
+    float: none;
+    width: 56px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    margin-top: 15px;
+    margin-right: 1px;
+    *margin-right: 5px;
+}
+
+.ly_cafe_clse button {
+    width: 22px;
+    height: 22px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -490px -100px;
+}
+
+.add_subs .subs_obj a {
+    height: 162px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+.add_subs .subs_obj a span {
+    display: inline-block;
+    position: absolute;
+    z-index: 30;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat;
+}
+
+/* noResult */
+.no_result .thumb {
+    background-image: url(http://static.naver.net/me/new/sp_trans_151117.png);
+    background-repeat: no-repeat;
+}
+
+.no_result.subscrib .thumb {
+    background-image: url(http://static.naver.net/me/new/sp_trans_151117.png);
+    background-repeat: no-repeat;
+}
+
+.no_result .thumb {
+    width: 45px;
+    height: 42px;
+    margin: 0 auto;
+    background-position: -9999px -9999px;
+}
+
+.no_result.alarm .thumb {
+    background-position: -600px -680px;
+}
+
+.no_result.alarm .thumb.post {
+    width: 40px;
+    height: 40px;
+    background-position: -50px -780px;
+}
+
+.no_result.alarm .thumb.movie {
+    width: 40px;
+    height: 40px;
+    background-position: -713px -780px;
+}
+
+.no_result.alarm .thumb.apps {
+    background-position: -100px -680px;
+}
+
+.no_result.alarm .thumb.toolbar {
+    background-position: -550px -630px;
+}
+
+.no_result.alarm .thumb.ndrive {
+    background-position: -50px -730px;
+}
+
+.no_result.alarm .thumb.checkout, .no_result.alarm .thumb.shopping {
+    background-position: -690px -630px;
+}
+
+.no_result.alarm .thumb.calendar {
+    background-position: -700px -580px;
+}
+
+.no_result.news .thumb {
+    background-position: -200px -730px;
+}
+
+.no_result.reple .thumb {
+    width: 45px;
+    height: 42px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -370px -210px;
+}
+
+.no_result.reple .thumb.blog {
+    width: 45px;
+    height: 42px;
+    background-position: -50px -680px;
+}
+
+.no_result.subscrib .thumb {
+    background-position: -350px -730px;
+}
+
+.no_result.bookmark .thumb {
+    width: 43px;
+    height: 38px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -460px -630px;
+}
+
+.no_result .h_no_result strong {
+    line-height: 22px;
+}
+
+.no_result .btn_direct .tx_node {
+    display: inline-block;
+    float: left;
+    height: 35px;
+    line-height: 36px;
+}
+
+.no_result .no_result_subs > a {
+    display: inline-block;
+    width: 100%;
+    height: 190px;
+}
+
+.no_result_subs span {
+    position: absolute;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+}
+
+/* temp no_result icon */
+.no_result.subscrib .thumb {
+    background-position: 0 -580px;
+}
+
+.no_result.subscrib .mail.thumb {
+    background-position: -550px -680px;
+}
+
+.no_result.subscrib .blog.thumb {
+    background-position: -50px -680px;
+}
+
+.no_result.subscrib .kin.thumb {
+    background-position: -500px -680px;
+}
+
+.no_result.subscrib .calendar.thumb {
+    background-position: -700px -580px;
+}
+
+.no_result.subscrib .news.thumb {
+    background-position: -350px -630px;
+}
+
+.no_result.subscrib .sports.thumb {
+    background-position: -150px -630px;
+}
+
+.no_result.subscrib .book.thumb {
+    background-position: -700px -680px;
+}
+
+.no_result.subscrib .movie.thumb {
+    background-position: 0 -730px;
+}
+
+.no_result.subscrib .music.thumb {
+    background-position: -300px -630px;
+}
+
+.no_result.subscrib .ndrive.thumb {
+    background-position: -50px -730px;
+}
+
+.no_result.subscrib .checkout.thumb, .no_result.subscrib .shopping.thumb {
+    background-position: -690px -630px;
+}
+
+.no_result.subscrib .rss.thumb {
+    background-position: -100px -730px;
+}
+
+.no_result.subscrib .facebook.thumb {
+    background-position: -350px -680px;
+}
+
+.no_result.subscrib .twitter.thumb {
+    background-position: -300px -680px;
+}
+
+.no_result.subscrib .gift.thumb {
+    background-position: -400px -680px;
+}
+
+.no_result.subscrib .toolbar.thumb {
+    background-position: -550px -630px;
+}
+
+.no_result.subscrib .thumb.region {
+    background-position: -450px -680px;
+}
+
+/* service profile icon */
+.tx_tooltip .thumb a, .lst_obj .thumb a {
+    background-position: -9999px -9999px;
+}
+
+.tx_tooltip .thumb .mail, .lst_obj .thumb .mail {
+    background-position: -150px -100px;
+}
+
+.tx_tooltip .thumb .blog, .lst_obj .thumb .blog {
+    background-position: 0 -50px;
+}
+
+.tx_tooltip .thumb .kin, .lst_obj .thumb .kin {
+    background-position: -150px -50px;
+}
+
+.tx_tooltip .thumb .calendar, .lst_obj .thumb .calendar {
+    background-position: -100px -50px;
+}
+
+.tx_tooltip .thumb .news, .lst_obj .thumb .news {
+    background-position: -200px -150px;
+}
+
+.tx_tooltip .thumb .sports, .lst_obj .thumb .sports {
+    background-position: -250px -100px;
+}
+
+.tx_tooltip .thumb .book, .lst_obj .thumb .book {
+    background-position: -50px -50px;
+}
+
+.tx_tooltip .thumb .movie, .lst_obj .thumb .movie {
+    background-position: -100px -150px;
+}
+
+.tx_tooltip .thumb .music, .lst_obj .thumb .music {
+    background-position: -150px -150px;
+}
+
+.tx_tooltip .thumb .ndrive, .lst_obj .thumb .ndrive {
+    background-position: -200px -100px;
+}
+
+.tx_tooltip .thumb .checkout, .lst_obj .thumb .checkout {
+    background-position: 0 -100px;
+}
+
+.tx_tooltip .thumb .shopping, .lst_obj .thumb .shopping {
+    background-position: -250px -50px;
+}
+
+.tx_tooltip .thumb .rss, .lst_obj .thumb .rss {
+    background-position: -200px -200px;
+}
+
+.tx_tooltip .thumb .gift, .lst_obj .thumb .gift {
+    background-position: -100px -100px;
+}
+
+.tx_tooltip .thumb .toolbar, .lst_obj .thumb .toolbar {
+    background-position: -250px -150px;
+}
+
+.tx_tooltip .thumb .bookmark, .lst_obj .thumb .bookmark {
+    background-position: -100px -250px;
+}
+
+.tx_tooltip .thumb .land, .lst_obj .thumb .land {
+    background-position: -200px -250px;
+}
+
+.tx_tooltip .thumb .post, .lst_obj .thumb .post {
+    background-position: -300px -250px;
+}
+
+.tx_tooltip .thumb .alarm, .lst_obj .thumb .alarm {
+    background-position: 0 -300px;
+}
+
+.tx_tooltip .thumb .auto, .lst_obj .thumb .auto {
+    background-position: -100px -300px;
+}
+
+.tx_tooltip .thumb .shopping, .lst_obj .thumb .shopping {
+    background-position: -50px -350px;
+}
+
+/* tost Layer */
+.ly_new_alarm {
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 173px;
+    height: 30px;
+    margin-left: -82px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -50px -290px;
+    color: #666;
+    font-family: dotum;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 31px;
+    text-indent: 9px;
+    z-index: 2;
+}
+
+.ly_new_alarm .new_msg a {
+    color: #666;
+}
+
+.ly_new_alarm .new_msg a:hover {
+    text-decoration: none;
+}
+
+.ly_new_alarm .new_ly_clse {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    display: inline-block;
+    width: 20px;
+    height: 27px;
+}
+
+.ly_new_alarm .new_ly_clse a {
+    display: inline-block;
+    width: 100%;
+    height: 27px;
+}
+
+/* layer */
+
+.ly_help p {
+    padding-bottom: 14px;
+    font-size: 11px;
+    color: #848689;
+    letter-spacing: -1px;
+}
+
+.ly_help .link {
+    font-size: 11px;
+    color: #f30;
+    letter-spacing: -1px;
+}
+
+.ly_help .edge {
+    position: absolute;
+    top: -6px;
+    right: 17px;
+    width: 9px;
+    height: 7px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -2090px 0;
+}
+
+/* loading */
+
+.ld_line {
+    _display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 188px;
+    height: 40px;
+    background: #7c7e8a url(http://static.naver.net/me/new/sp_me_151117.png) -1260px -240px;
+}
+
+.ld_line .cont {
+    padding: 13px 0 0;
+    color: #fff;
+    text-align: center;
+}
+
+.ld_line .cont img {
+    width: 17px;
+    height: 17px;
+    margin: -2px 5px 0 0;
+    background: url(http://static.naver.net/me/ico_ld_all.gif) 0 0;
+    vertical-align: middle;
+}
+
+#section_cld .ld_line {
+    width: 191px;
+    height: 38px;
+    border: 1px solid #9a9ba6;
+    background: #f8f7fb;
+}
+
+#section_cld .ld_line .cont {
+    font-weight: bold;
+    color: #8259e1;
+}
+
+#section_cld .ld_line .cont img {
+    width: 14px;
+    height: 14px;
+    margin: -1px 5px 0 0;
+    background: url(http://static.naver.net/me/ico_ld_cld20120329.gif) 0 0;
+    vertical-align: middle;
+}
+
+/* layer */
+
+.ly_bx.wj .ly_tit strong {
+    line-height: 20px;
+}
+
+.ly_bx.wj .btn_area {
+    padding-top: 19px;
+}
+
+.ly_bx p {
+    text-align: center;
+}
+
+.ly_bx .ly_tit strong {
+    line-height: 18px;
+    letter-spacing: -1px;
+    font-size: 12px;
+}
+
+.ly_bx .ly_tit strong em {
+    color: #109c01;
+}
+
+.ly_bx .ly_alarm_e input {
+    vertical-align: text-top;
+    margin-right: 4px;
+}
+
+.ly_bx .ly_alarm_e label {
+    vertical-align: -2px;
+}
+
+.ly_bx .btn_area {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.ly_bx .btn_area a {
+    display: inline-block;
+    width: 42px;
+    height: 27px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -9999px -9999px no-repeat;
+}
+
+.ly_bx .ly_tit strong {
+    line-height: 18px;
+    letter-spacing: -1px;
+    font-size: 12px;
+    color: #555 !important;
+}
+
+.ly_bx .ly_tit strong em {
+    color: #109c01 !important;
+}
+
+.ly_bx .btn_area {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.ly_bx .btn_area a {
+    display: inline-block;
+    width: 42px;
+    height: 27px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -9999px -9999px no-repeat;
+    margin-right: 5px;
+}
+
+.other_need dt {
+    display: block;
+    overflow: hidden;
+    float: left;
+    clear: left;
+    width: 170px;
+    color: #333;
+    line-height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.other_need dd {
+    float: right;
+    font-size: 11px;
+    color: #666;
+    line-height: 20px;
+}
+
+.other_need dd a {
+    color: #666;
+    text-decoration: underline;
+}
+
+/* 구독 플러스 */
+
+.ly_header h2 {
+    margin-left: 13px;
+    *padding-top: 7px;
+}
+
+.ly_header h2 span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    color: #5a636f;
+    margin-top: 2px;
+    *margin-top: -8px;
+}
+
+.ly_mid .ly_snb menu li {
+    position: relative;
+    height: auto;
+    padding: 6px 0;
+    border-bottom: 1px solid #333943;
+    background: #434c5d;
+}
+
+.ly_mid .ly_snb menu li a {
+    text-decoration: none;
+}
+
+.ly_mid .ly_snb menu li a:hover, .ly_mid .ly_snb menu li a:visited {
+    text-decoration: none;
+}
+
+.ly_mid .ly_snb menu li.on {
+    background: #373f50;
+    border-bottom: 1px solid #2d333d;
+    *margin-top: -6px;
+}
+
+.ly_mid .ly_snb menu li.on:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #343b4b;
+    content: " ";
+}
+
+.ly_mid .ly_snb menu li:first-child {
+    background: #434c5d url(http://static.naver.net/me/new/snb_frst_top.png) 0 0 repeat-x;
+}
+
+.ly_mid .ly_snb menu li.ctg.event a {
+    display: inline-block;
+    width: 197px;
+    background: none;
+}
+
+.ly_mid .ly_snb menu li.ctg.event.beginner a {
+    height: 50px;
+    background: url(http://static.naver.net/me/new/197x50_01v2.png) no-repeat;
+}
+
+.ly_mid .ly_snb menu li.ctg.event.weekendlife a {
+    height: 50px;
+    background: url(http://static.naver.net/me/new/197x50_02.png) no-repeat;
+}
+
+.ly_mid .ly_snb menu li.ctg.event.celebcamping a, .ly_mid .ly_snb menu li.ctg.event.celebhealth a, .ly_mid .ly_snb menu li.ctg.event.celebpet a, .ly_mid .ly_snb menu li.ctg.event.celebcooking a {
+    height: 50px;
+}
+
+.ly_mid .ly_snb menu li.ctg dl {
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.ly_mid .ly_snb menu li.ctg dt {
+    display: block;
+}
+
+.ly_mid .ly_snb menu li.ctg dd {
+    display: inline-block;
+    float: left;
+    width: 44px;
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.ly_mid .ly_snb menu li.ctg dd a {
+    *width: 67px;
+}
+
+.ly_footer a {
+    display: inline-block;
+    color: #333;
+}
+
+.ly_footer a:hover {
+    text-decoration: none;
+}
+
+.ly_footer a span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+.h_ctg h3 {
+    height: 51px;
+    padding-left: 15px;
+    background: url(http://static.naver.net/me/new/ly_top_bg.gif) repeat-x;
+    line-height: 50px;
+    letter-spacing: -1px;
+}
+
+.h_ctg strong {
+    display: inline-block;
+    position: relative;
+    font-size: 17px;
+    color: #444a52;
+}
+
+.h_ctg strong em {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 7px;
+    font-size: 11px;
+    color: #888;
+    vertical-align: middle;
+}
+
+.h_ctg .tx_area a {
+    color: #333;
+}
+
+.ly_need dt {
+    display: block;
+    overflow: hidden;
+    float: left;
+    clear: left;
+    width: 180px;
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ly_need dd {
+    text-align: right;
+    height: 20px;
+}
+
+.ly_need dd a {
+    color: #0a9207;
+    text-decoration: underline;
+}
+
+.h_ctg .ly_cncl a {
+    display: inline-block;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat;
+}
+
+.spot_area .ly_cncl a {
+    display: inline-block;
+    background: #fcfcfc url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat;
+}
+
+.ctg_lst li {
+    float: left;
+    margin: 0 4px 4px 0;
+}
+
+.ctg_lst li .ctg_obj .rbox span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat;
+}
+
+.ctg_lst li .ctg_obj .rbox span.lt {
+    top: -1px;
+    left: -1px;
+    background-position: -127px -100px;
+}
+
+.ctg_lst li .ctg_obj .rbox span.rt {
+    top: -1px;
+    right: -1px;
+    background-position: -135px -100px;
+}
+
+.ctg_lst li .ctg_obj .rbox span.lb {
+    left: -1px;
+    bottom: -1px;
+    background-position: -127px -108px;
+}
+
+.ctg_lst li .ctg_obj .rbox span.rb {
+    right: -1px;
+    bottom: -1px;
+    background-position: -135px -108px;
+}
+
+.ctg_lst li .ctg_obj.on .rbox span.lt {
+    background-position: -110px -100px;
+}
+
+.ctg_lst li .ctg_obj.on .rbox span.rt {
+    background-position: -119px -100px;
+}
+
+.ctg_lst li .ctg_obj.on .rbox span.lb {
+    background-position: -110px -108px;
+}
+
+.ctg_lst li .ctg_obj.on .rbox span.rb {
+    background-position: -119px -108px;
+}
+
+.ctg_lst li .ctg_obj .obj_thumb a {
+    display: inline-block;
+    position: relative;
+}
+
+.ctg_lst li .ctg_obj .obj_thumb a .mask {
+    position: absolute;
+    z-index: 150;
+    left: 0;
+    top: 0;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #000;
+    opacity: 0.2;
+    filter: Alpha(opacity=20);
+}
+
+.ctg_lst li .ctg_obj .obj_desc strong {
+    display: inline-block;
+    margin-top: -1px;
+    color: #333;
+}
+
+.ctg_lst li .ctg_obj .obj_desc strong a {
+    line-height: 17px;
+    color: #333;
+}
+
+.ctg_lst li .ctg_obj .obj_desc p {
+    margin-top: 4px;
+    color: #777;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 15px;
+}
+
+.ctg_lst li .ctg_obj .obj_desc p a {
+    color: #777;
+}
+
+.ctg_lst li .ctg_obj .obj_desc.nlst_checked strong, .ctg_lst li .ctg_obj .obj_desc.nlst_checked a {
+    color: #999;
+}
+
+.ctg_lst li .ctg_obj .btn_add .cnt {
+    display: block;
+    margin-top: 0;
+    font-size: 11px;
+    font-family: tahoma;
+    color: #777;
+    font-weight: normal;
+    background-position: -275px -367px;
+    *background-position: -276px -367px;
+}
+
+/* paginate */
+.paginate {
+    text-align: right;
+}
+
+.paginate .btn_prev_off {
+    margin-right: -1px;
+    background-position: -620px -100px;
+}
+
+.paginate .btn_next_off {
+    background-position: -660px -100px;
+}
+
+.paginate .btn_next_on {
+    background-position: -680px -100px;
+}
+
+/* 환경설정 */
+
+.envmt_top h3 {
+    width: 104px;
+    height: 35px;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat 0 -380px;
+    display: inline-block;
+    float: left;
+}
+
+.envmt_top span {
+    display: inline-block;
+    float: left;
+}
+
+.envmt_cont .envmt_menu li {
+    float: left;
+    margin-left: 70px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.envmt_cont .envmt_menu li:first-child {
+    margin-left: 144px;
+}
+
+.envmt_cont .envmt_menu li a {
+    display: block;
+    height: 63px;
+}
+
+.envmt_cont .control_box h4 {
+    font-size: 12px;
+    margin-bottom: 11px;
+}
+
+.lft_zone .svc_name dt {
+    position: relative;
+    padding-left: 14px;
+    height: 39px;
+    line-height: 38px;
+    border-bottom: 1px solid #dedede;
+    background: #f8f8f8;
+}
+
+.control_box.subscribe .lft_zone .svc_name dt {
+    padding-left: 9px;
+}
+
+.lft_zone .svc_name dt button {
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 33px;
+    height: 19px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    border: 0;
+    z-index: 20;
+}
+
+.lft_zone .svc_name dt button.on {
+    background-position: -490px -300px;
+}
+
+.lft_zone .svc_name dt button.off {
+    background-position: -490px -280px;
+}
+
+.lft_zone .svc_name .svc_list ul > li, .lft_zone .svc_name .subscribe_list ul > li {
+    position: relative;
+    border-bottom: 1px solid #ececec;
+}
+
+.lft_zone .svc_name .svc_list ul > li a, .lft_zone .svc_name .subscribe_list ul > li a {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    color: #2d2d2d;
+    text-indent: 15px;
+}
+
+.lft_zone .svc_name .svc_list ul > li a:hover, .lft_zone .svc_name .subscribe_list ul > li a:hover, .lft_zone .svc_name .svc_list ul > li.on a, .lft_zone .svc_name .subscribe_list ul > li.on a {
+    background: #dae5f0;
+    text-decoration: none;
+}
+
+.lft_zone .svc_name .svc_list ul > li button, .lft_zone .svc_name .subscribe_list ul > li button {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: 33px;
+    height: 19px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    border: 0;
+    z-index: 20;
+}
+
+.lft_zone .svc_name .svc_list ul > li button.on, .lft_zone .svc_name .subscribe_list ul > li button.on {
+    background-position: -490px -300px;
+}
+
+.lft_zone .svc_name .svc_list ul > li button.off, .lft_zone .svc_name .subscribe_list ul > li button.off {
+    background-position: -490px -280px;
+}
+
+.box_area.alloff .lft_zone .svc_name .svc_list ul {
+    position: relative;
+    z-index: 1;
+}
+
+.box_area.alloff .lft_zone .svc_name .svc_list ul:after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.box_area.alloff .lft_zone .svc_name .svc_list ul > li a {
+    color: #bbb;
+}
+
+.box_area.alloff .lft_zone .svc_name .svc_list ul > li button.off {
+    background-position: -388px -457px;
+}
+
+.box_area.alloff .lft_zone .svc_name .svc_list ul > li button.on {
+    background-position: -388px -486px;
+}
+
+.lft_zone .svc_name.drag_mode .svc_list ul > li.drag_obj a, .lft_zone .svc_name.drag_mode .subscribe_list ul > li.drag_obj a {
+    display: block;
+    height: 33px;
+    background: #6d7279 url(http://static.naver.net/me/new/env_bg17_1.png) no-repeat 0 50%;
+    padding-left: 0;
+    color: #fff;
+}
+
+.lft_zone .svc_name.drag_mode .svc_list ul > li.drag_obj a:hover, .lft_zone .svc_name.drag_mode .subscribe_list ul > li.drag_obj a:hover {
+    background: #6d7279 url(http://static.naver.net/me/new/env_bg17_1.png) no-repeat 0 50%;
+    padding-left: 0;
+    color: #fff;
+}
+
+.widget_control.drag_mode li.drag_obj a {
+    display: block;
+    height: 33px;
+    background: #6d7279 url(http://static.naver.net/me/new/env_bg17_1.png) no-repeat 0 50%;
+    padding-left: 18px;
+    color: #fff;
+}
+
+.widget_control.drag_mode li.drag_obj a:hover {
+    background: #6d7279 url(http://static.naver.net/me/new/env_bg17_1.png) no-repeat 0 50%;
+    padding-left: 18px;
+    color: #fff;
+}
+
+.lft_zone .svc_name span {
+    display: inline-block;
+    border-left: 1px solid #e0e0e0;
+    height: 11px;
+    line-height: 11px;
+    *line-height: 12px;
+}
+
+.lft_zone .svc_name span strong {
+    font-weight: normal;
+}
+
+.control_box.alarm .lft_zone .svc_name span strong {
+    font-weight: bold;
+}
+
+.lft_zone .svc_name span:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.lft_zone .svc_name .restore {
+    display: none;
+}
+
+.lft_zone .svc_name.drag_mode .restore {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 6px;
+    width: 52px;
+    height: 25px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -360px -250px;
+}
+
+.lft_zone .svc_name span a {
+    color: #888;
+}
+
+.lft_zone .svc_name span.on {
+    margin-left: 7px;
+}
+
+.lft_zone .svc_name span.on strong {
+    font-weight: bold;
+}
+
+.lft_zone .svc_name span.on a {
+    color: #2d2d2d;
+}
+
+.lft_zone .svc_name span.on:first-child + span {
+    margin-left: 7px;
+    padding-left: 7px;
+}
+
+.rgt_zone .ctrl_delegate .lst_option input {
+    margin-right: 6px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.rgt_zone .ctrl_delegate .lst_option span {
+    display: inline-block;
+    height: 11px;
+    margin-left: 4px;
+    padding-left: 8px;
+    border-left: 1px solid #d3d2d2;
+    vertical-align: middle;
+    line-height: 11px;
+    margin-top: -3px;
+}
+
+.rgt_zone .ctrl_delegate .lst_option2 label {
+    letter-spacing: -1px;
+}
+
+.rgt_zone .ctrl_delegate .lst_option label {
+    letter-spacing: -1px;
+}
+
+.rgt_zone .ctrl_delegate .lst_option span em {
+    font-weight: bold;
+    color: #f02626;
+}
+
+.rgt_zone .ctrl_delegate .lst_option2 input {
+    margin-right: 6px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.rgt_zone .ctrl_delegate.me2day select {
+    position: relative;
+    top: 2px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.rgt_zone .ctrl_delegate.external_sns h5 {
+    font-size: 12px;
+    color: #2d2d2d;
+}
+
+.control_box.news .empty_news .btn_direct .tx_node {
+    display: inline-block;
+    float: left;
+    height: 35px;
+    line-height: 36px;
+}
+
+.rgt_zone .result_list .chk_btn input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.rgt_zone .result_list .chk_btn label {
+    display: inline-block;
+    width: 33px;
+    height: 19px;
+    cursor: pointer;
+}
+
+.control_box.alarm .rgt_zone .result_list dt {
+    height: 37px;
+}
+
+.control_box.alarm .rgt_zone .result_list dt a {
+    display: block;
+    height: 37px;
+    line-height: 37px;
+    padding-left: 15px;
+}
+
+.control_box.alarm .rgt_zone .result_list dt a:hover {
+    text-decoration: none;
+}
+
+.control_box.alarm .rgt_zone .result_list dd {
+    padding: 15px;
+    background: #fbfbfc;
+}
+
+.control_box.alarm .rgt_zone .result_list li {
+    height: auto;
+    *min-height: 38px;
+}
+
+.control_box.alarm .rgt_zone .result_list ul {
+    border-bottom: 1px solid #ececec;
+}
+
+.control_box.alarm .rgt_zone .result_list ul > li {
+    overflow: hidden;
+    height: 33px;
+    line-height: 33px;
+    border-top: 1px solid #ececec;
+}
+
+.control_box.alarm .rgt_zone .result_list ul > li:first-child {
+    margin-top: 0;
+    border-top: 0;
+}
+
+.control_box.alarm .rgt_zone .result_list ul > li:hover {
+    background: none;
+    text-decoration: none;
+}
+
+.rgt_zone .result_list li {
+    position: relative;
+    padding-left: 15px;
+    height: 25px;
+    line-height: 25px;
+}
+
+.rgt_zone .result_list li.ly_show ~ li {
+    *z-index: -1;
+}
+
+.rgt_zone .result_list li:hover {
+    background: #dae4ef;
+    text-decoration: underline;
+}
+
+.rgt_zone .result_list li:hover ~ li {
+    *z-index: -1;
+}
+
+.rgt_zone .result_list li label {
+    vertical-align: top;
+    *vertical-align: baseline;
+}
+
+.rgt_zone .result_list li a {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    top: -1px;
+    max-width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #2d2d2d;
+}
+
+.rgt_zone .result_list li button {
+    position: absolute;
+    z-index: 20;
+    top: -1px;
+    right: 14px;
+    width: 16px;
+    height: 25px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+    background-position: -337px -250px;
+}
+
+.rgt_zone .result_list li:hover button {
+    background-position: -320px -250px;
+}
+
+.rgt_zone .result_list li:first-child {
+    margin-top: 6px;
+}
+
+.rgt_zone .result_list li input {
+    margin-top: -3px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.rgt_zone .result_list li.more {
+    height: 31px;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: -11px;
+    line-height: 31px;
+    border-top: 1px solid #e2e2e2;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+}
+
+.rgt_zone .result_list li.more:hover {
+    text-decoration: none;
+}
+
+.rgt_zone .result_list li.more a {
+    display: block;
+    max-width: 100%;
+    height: 30px;
+    color: #666;
+}
+
+.rgt_zone .result_list li.more a span {
+    display: inline-block;
+    width: 5px;
+    height: 3px;
+    margin-left: 3px;
+    background: url(http://static.naver.net/me/sp_bu20120726.png) -35px -238px no-repeat;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.rgt_zone .result_list li.more .tx_error a {
+    display: inline;
+    height: auto;
+    color: #109c01;
+    text-decoration: underline;
+}
+
+.rgt_zone .result_list li.more .tx_error a:hover {
+    text-decoration: underline;
+}
+
+.rgt_zone .result_list > ul > li input {
+    vertical-align: top;
+    margin-top: 5px;
+    *margin-top: 2px;
+}
+
+.rgt_zone .etc_info .ntc span {
+    font-weight: bold;
+}
+
+.rgt_zone .etc_info .ntc span a {
+    color: #000;
+}
+
+.rgt_zone .etc_info .ntc_info p {
+    color: #a0a2a6;
+    margin-bottom: 8px;
+}
+
+.rgt_zone .etc_info .ntc_info p input {
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+.rgt_zone .etc_info .ntc_info p label {
+    vertical-align: -1px;
+}
+
+.rgt_zone .etc_info .ntc_info ul {
+    padding-left: 15px;
+    padding-top: 2px;
+}
+
+.rgt_zone .etc_info .ntc_info ul li {
+    font-size: 11px;
+    border-top: 0 !important;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    *min-height: 13px !important;
+}
+
+.rgt_zone .alarm_off .go_dtl a {
+    display: inline-block;
+    color: #6d6f72;
+    background: url(http://static.naver.net/me/new/bul_arr4_2.gif) no-repeat 100% 50%;
+    padding-right: 5px;
+}
+
+.rgt_zone .alarm_off .ntc a {
+    color: #a0a2a6;
+    font-weight: bold;
+}
+
+.loading_tx p {
+    color: #333;
+    font-weight: bold;
+}
+
+.tx_load a {
+    color: #109c01;
+    text-decoration: underline;
+}
+
+.no_result_lst p {
+    margin-top: 4px;
+    line-height: 19px;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+.no_result_lst p:first-child {
+    margin-top: 0;
+}
+
+.no_result_lst p strong {
+    font-size: 14px;
+}
+
+.sns_lst li {
+    position: relative;
+    padding-left: 15px;
+    margin-top: 10px;
+    *zoom: 1;
+}
+
+.sns_lst li:first-child {
+    margin-top: 12px;
+}
+
+.sns_lst li span {
+    display: inline-block;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.sns_lst li span.link_manage a {
+    display: inline-block;
+    background: url(http://static.naver.net/me/new/bul_arr2.gif) no-repeat 100% 50%;
+    padding-right: 5px;
+    color: #666;
+}
+
+.sns_lst li span.link_cncl a {
+    color: #555;
+}
+
+.sns_lst li button {
+    position: absolute;
+    right: 10px;
+    top: -4px;
+    width: 33px;
+    height: 19px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    font-size: 11px;
+    letter-spacing: -1px;
+    z-index: 20;
+}
+
+.sns_lst li button.on {
+    background-position: -490px -300px;
+}
+
+.sns_lst li button.off {
+    background-position: -490px -280px;
+}
+
+.envmt_cont .envmt_foot .img_bg_bot span {
+    display: inline-block;
+    float: left;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -9999px -9999px;
+}
+
+.envmt_cont .envmt_foot .img_bg_bot button {
+    margin-top: 20px;
+    width: 104px;
+    height: 37px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.snvmt_clse button {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+}
+
+.end_tx span {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    letter-spacing: -1px;
+    background: #fff;
+    padding: 5px 0 0 20px;
+}
+
+.add_rss dl {
+    padding-top: 14px;
+}
+
+.add_rss dt {
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #777;
+    font-family: dotum;
+    letter-spacing: -1px;
+}
+
+.control_box.alarm .svc_name .lst_control a {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -420px -80px;
+    width: 54px;
+    height: 14px;
+}
+
+.control_box.alarm .svc_name dt {
+    background: #f8f8f8;
+}
+
+.control_box.alarm .svc_symb em {
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+.control_box.alarm .svc_symb span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-position: -9999px -9999px;
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-right: 7px;
+}
+
+.control_box.alarm .svc_symb span.mail {
+    background-position: -200px -120px;
+}
+
+.control_box.alarm .svc_symb span.blog {
+    background-position: -170px 0;
+}
+
+.control_box.alarm .svc_symb span.kin {
+    background-position: -170px -60px;
+}
+
+.control_box.alarm .svc_symb span.calendar {
+    background-position: -200px -90px;
+}
+
+.control_box.alarm .svc_symb span.news {
+    background-position: -49px -180px;
+}
+
+.control_box.alarm .svc_symb span.sports {
+    background-position: -80px -150px;
+}
+
+.control_box.alarm .svc_symb span.book {
+    background-position: -17px -121px;
+}
+
+.control_box.alarm .svc_symb span.movie {
+    background-position: -49px -121px;
+}
+
+.control_box.alarm .svc_symb span.music {
+    background-position: -110px -120px;
+}
+
+.control_box.alarm .svc_symb span.ndrive {
+    background-position: -230px -30px;
+}
+
+.control_box.alarm .svc_symb span.checkout {
+    background-position: -139px 0;
+}
+
+.control_box.alarm .svc_symb span.shopping {
+    background-position: -80px -121px;
+}
+
+.control_box.alarm .svc_symb span.rss {
+    background-position: -80px -239px;
+}
+
+.control_box.alarm .svc_symb span.gift {
+    background-position: -139px -60px;
+}
+
+.control_box.alarm .svc_symb span.toolbar {
+    background-position: -139px -150px;
+}
+
+.control_box.alarm .svc_symb span.land {
+    background-position: -170px -239px;
+}
+
+.control_box.alarm .svc_symb span.post {
+    background-position: -139px -269px;
+}
+
+.control_box.alarm .svc_name.drag_mode .svc_list li.m_over a {
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.alarm .svc_name.drag_mode .svc_list li.m_over a:hover {
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.alarm .svc_name.drag_mode .svc_list li.on {
+    background: #dae5f0;
+}
+
+.control_box.alarm .svc_name.drag_mode .svc_list li a {
+    padding-left: 13px;
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.alarm .svc_name.drag_mode .subscribe_list li a {
+    padding-left: 13px;
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.alarm .svc_name.drag_mode .svc_list li a:hover, .control_box.alarm .svc_name.drag_mode .subscribe_list li a:hover, .control_box.alarm .svc_name.drag_mode .svc_list li a.app, .control_box.alarm .svc_name.drag_mode .subscribe_list li a.app {
+    background: #dae5f0 url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+    cursor: move;
+}
+
+.control_box.alarm .svc_name.drag_mode .lst_control2 a {
+    display: inline-block;
+    float: left;
+    width: 33px;
+    height: 24px;
+}
+
+.control_box.alarm .btn_mobile a {
+    display: block;
+    height: 28px;
+}
+
+.control_box.alarm .kind_device .rgt_zone .ctrl_alarm dt button {
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    border: 0;
+    width: 24px;
+    height: 24px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+    cursor: pointer;
+}
+
+.control_box.alarm .kind_device .rgt_zone .ctrl_alarm dt button.off {
+    background-position: -522px -339px;
+}
+
+.control_box.alarm .kind_device .rgt_zone .ctrl_alarm dt button.on {
+    background-position: -522px -371px;
+}
+
+.control_box.alarm .kind_device .eticket_mode .btn_eticket a {
+    display: block;
+    height: 14px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul {
+    padding: 15px 0 28px 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li {
+    width: 100px;
+    margin: 0 auto 18px auto;
+    padding-top: 23px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li:first-child {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background: url(http://static.naver.net/me/new/sp_me_high20141016.png) no-repeat -300px -180px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span a {
+    display: block;
+    height: 60px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.ios {
+    background-position: -460px 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.ios.on {
+    background-position: -390px 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.android {
+    background-position: -460px -70px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.android.on {
+    background-position: -390px -70px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.ipad {
+    background-position: -470px -140px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.ipad.on {
+    background-position: -400px -140px;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span.on + .device_name > a {
+    color: #2d2d2d;
+    background: url(http://static.naver.net/me/new/bulArr2.gif) no-repeat 100% 50%;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .ico_device > span + .device_name.tgl > a {
+    color: #2d2d2d;
+    background: url(http://static.naver.net/me/new/bulArr3.gif) no-repeat 100% 50% !important;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name > a {
+    display: inline-block;
+    margin-top: 9px;
+    background: url(http://static.naver.net/me/new/bulArr1.gif) no-repeat 100% 50%;
+    padding-right: 11px;
+    font-weight: bold;
+    color: #777;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name > a.none {
+    background: none;
+    padding-right: 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name > a + em {
+    display: inline-block;
+    margin-top: 3px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name .ly_device li {
+    border-top: 1px solid #d2d2d2;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name .ly_device li:first-child {
+    border-top: 0;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name .ly_device li a {
+    display: block;
+    padding: 5px 8px 4px 8px;
+    color: #444;
+    background: #fff;
+    line-height: 16px;
+    text-align: left;
+}
+
+.control_box.alarm .kind_device .lft_zone .m_device ul > li .device_name .ly_device li a:hover {
+    background: #dae5f0;
+    text-decoration: none;
+}
+
+.control_box.alarm .rgt_zone .result_list .flowing {
+    margin-top: 138px;
+    text-align: center;
+}
+
+.control_box.alarm .rgt_zone .result_list .flowing p {
+    margin-top: 5px;
+    line-height: 19px;
+}
+
+.control_box.alarm .rgt_zone .result_list .flowing p:first-child {
+    margin-top: 0;
+}
+
+.control_box.alarm .rgt_zone .result_list .flowing p strong {
+    font-size: 14px;
+}
+
+.control_box.alarm .rgt_zone .disabled_mode .disabled_ui p {
+    line-height: 17px;
+}
+
+.control_box.alarm .rgt_zone .disabled_mode .disabled_ui .tx2 a {
+    color: #777;
+}
+
+.push_alarm .top_title_area h6 {
+    color: #2d2d2d;
+    font-size: 12px;
+}
+
+.push_alarm .top_title_area dl {
+    overflow: hidden;
+    position: absolute;
+    top: 19px;
+    right: 0;
+    width: 190px;
+}
+
+.push_alarm .top_title_area dt {
+    display: block;
+    float: left;
+    clear: left;
+    margin-right: 8px;
+    padding-top: 4px;
+}
+
+.push_alarm .top_title_area dd select {
+    width: 130px;
+    height: 20px;
+}
+
+.push_alarm .app_naver input {
+    vertical-align: text-top;
+    margin-right: 6px;
+    *vertical-align: middle;
+}
+
+.push_alarm .app_naver input + label {
+    vertical-align: -1px;
+}
+
+.control_box.alarm .kind_svc .ctrl_alarm dl {
+    margin-top: 12px;
+    border: 1px solid #e8e8e8;
+    padding: 15px 15px 22px 15px;
+}
+
+.control_box.alarm .ctrl_alarm dt {
+    position: relative;
+}
+
+.control_box.alarm .ctrl_alarm dt.off {
+    color: #888;
+}
+
+.control_box.alarm .ctrl_alarm dt input {
+    vertical-align: text-top;
+    margin-right: 5px;
+    *vertical-align: middle;
+}
+
+.control_box.alarm .ctrl_alarm dt input + label {
+    vertical-align: -1px;
+}
+
+.control_box.alarm .ctrl_alarm dd {
+    margin-top: 7px;
+}
+
+.control_box.alarm .access_ena > div {
+    position: relative;
+    margin-top: 14px;
+    padding: 0 12px;
+    height: 45px;
+    background: #f5f5f5;
+    line-height: 45px;
+}
+
+.control_box.alarm .access_ena > div .disabled {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.8;
+    filter: Alpha(opacity=80);
+}
+
+.control_box.alarm .access_ena .go_access span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-position: -9999px -9999px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 7px;
+}
+
+.control_box.alarm .access_ena .go_access span.blog {
+    background-position: -170px 0;
+}
+
+.control_box.alarm .access_ena .go_access span.naver {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -140px -410px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 7px;
+}
+
+.control_box.alarm .eticket_area .eticket_mode .btn_eticket a {
+    display: block;
+    height: 14px;
+}
+
+.control_box.alarm .eticket_area .eticket_mode input {
+    vertical-align: text-top;
+    margin-right: 7px;
+    margin-top: 0;
+    *vertical-align: middle;
+}
+
+.control_box.alarm .eticket_area .eticket_mode input + label {
+    vertical-align: -1px;
+    font-weight: bold;
+}
+
+.control_box.alarm .eticket_area .time_grp + span {
+    display: inline-block;
+    float: left;
+    margin: 0 11px 0 10px;
+}
+
+.control_box.alarm .eticket_area .time_grp + span + div {
+    margin-left: -1px;
+}
+
+.control_box.alarm .eticket_area .time_bx span {
+    display: inline-block;
+    float: left;
+    width: 49px;
+    height: 25px;
+    line-height: 25px;
+    color: #444;
+    padding: 0;
+    text-align: left;
+}
+
+.control_box.alarm .eticket_area .time_bx span:first-child {
+    border-right: 1px solid #d2d2d2;
+    text-align: left;
+}
+
+.control_box.alarm .eticket_area .time_bx span:first-child a {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    text-indent: 7px;
+    color: #444;
+    line-height: 28px;
+    text-align: left;
+    *text-indent: 3px;
+}
+
+.control_box.alarm .eticket_area .time_bx span:first-child a:hover {
+    text-decoration: none;
+}
+
+.control_box.alarm .eticket_area .time_bx span:first-child em {
+    display: inline-block;
+    margin-left: 5px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -520px -100px;
+    width: 7px;
+    height: 5px;
+    vertical-align: middle;
+}
+
+.control_box.alarm .eticket_area .time_bx span:first-child a.on em {
+    display: inline-block;
+    margin-left: 5px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -520px -121px;
+    width: 7px;
+    height: 5px;
+}
+
+.control_box.alarm .eticket_area .time_bx span input {
+    width: 49px;
+    height: 25px;
+    border: 0;
+    line-height: 25px;
+    text-align: center;
+    margin: 0;
+    vertical-align: top;
+    *margin-top: -1px;
+}
+
+.control_box.alarm .eticket_area .time_bx .ly_time a {
+    display: block;
+    height: 25px;
+    background: #fff;
+    text-indent: 7px;
+    line-height: 26px;
+}
+
+.control_box.alarm .eticket_area .time_bx .ly_time a:hover {
+    background: #dae5f0;
+    text-decoration: none;
+}
+
+.control_box.alarm .eticket_area .ly_eticket p {
+    color: #777;
+    margin: 9px 0 8px 0;
+}
+
+.control_box.alarm .eticket_area .ly_eticket p:first-child {
+    color: #777;
+    margin: 0 0 8px 0;
+}
+
+.control_box.alarm .eticket_area .ly_eticket span {
+    line-height: normal;
+}
+
+.control_box.alarm .eticket_area .ly_eticket span a {
+    overflow: visible;
+    position: static;
+    color: #2674df;
+    font-size: 11px;
+    letter-spacing: -1px;
+}
+
+.control_box.alarm .ctrl_alarm li {
+    padding: 6px 0 6px 12px;
+    border: 0;
+    margin: 0;
+    line-height: normal;
+    height: auto;
+    position: static;
+}
+
+.control_box.alarm .ctrl_alarm li:first-child {
+    padding-left: 0;
+}
+
+.control_box.alarm .ctrl_alarm li:hover {
+    text-decoration: none;
+    background: none;
+}
+
+.control_box.alarm .ctrl_alarm .app_notice em {
+    display: block;
+    overflow: hidden;
+}
+
+.control_box.alarm .ctrl_alarm .app_notice em:first-child {
+    overflow: visible;
+    float: left;
+    margin-right: 4px;
+    margin-left: -2px;
+}
+
+.control_box.alarm .ctrl_alarm .app_notice span {
+    text-decoration: underline;
+}
+
+.control_box.alarm .ctrl_alarm .app_notice span a {
+    color: #777;
+}
+
+.control_box.alarm .not_svc input {
+    margin-right: 5px;
+    vertical-align: text-top;
+    *vertical-align: middle;
+}
+
+.control_box.alarm .not_svc input label {
+    vertical-align: -1px;
+}
+
+.control_box.alarm .not_svc ul {
+    padding-left: 18px;
+}
+
+.control_box.alarm .not_svc li {
+    color: #777;
+    letter-spacing: -1px;
+    padding: 0 0 0 0;
+    margin: 0;
+    line-height: 18px;
+}
+
+.control_box.subscribe .svc_name .lst_control a {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -420px -80px;
+    width: 54px;
+    height: 14px;
+}
+
+.control_box.widzet .h_widget .lst_control a {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -420px -80px;
+    width: 54px;
+    height: 14px;
+}
+
+.control_box.subscribe .svc_name .lst_control a, .control_box.widzet .h_widget .lst_control a {
+    display: block;
+    height: 14px;
+}
+
+.control_box.subscribe .svc_name.drag_mode .lst_control2 a {
+    display: inline-block;
+    float: left;
+    width: 33px;
+    height: 24px;
+}
+
+.control_box.widzet .widget_control.drag_mode .lst_control2 p.ch_btn a {
+    display: inline-block;
+    float: left;
+    width: 33px;
+    height: 24px;
+}
+
+.control_box.widzet .widget_control.drag_mode .lst_control2 .restore {
+    position: absolute;
+    right: 83px;
+    top: 6px;
+    width: 52px;
+    height: 25px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -360px -250px;
+}
+
+.control_box.widzet .widget_control.drag_mode .lst_control2 .restore a {
+    display: inline-block;
+    width: 100%;
+    height: 25px;
+}
+
+.control_box.subscribe .svc_name.drag_mode .svc_list li.m_over a {
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.subscribe .svc_name.drag_mode .svc_list li.m_over a:hover {
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.subscribe .svc_name.drag_mode .svc_list li a {
+    padding-left: 13px;
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.subscribe .svc_name.drag_mode .subscribe_list li a {
+    padding-left: 13px;
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+}
+
+.control_box.subscribe .svc_name.drag_mode .subscribe_list li.on a {
+    background: #dae5f0 url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+    cursor: move;
+}
+
+.control_box.subscribe .svc_name.drag_mode .svc_list li.on a, .control_box.subscribe .svc_name.drag_mode .svc_list li a:hover {
+    background: #dae5f0 url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+    cursor: move;
+}
+
+.control_box.subscribe .svc_name.drag_mode .subscribe_list li a:hover, .control_box.subscribe .svc_name.drag_mode .svc_list li a.app, .control_box.subscribe .svc_name.drag_mode .subscribe_list li a.app {
+    background: #dae5f0 url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat 11px 50%;
+    cursor: move;
+}
+
+.control_box.subscribe .svc_name.drag_mode .svc_list li button, .control_box.subscribe .svc_name.drag_mode .subscribe_list li button {
+    display: none;
+}
+
+/*.control_box.subscribe .svc_name .lst_control a:hover,
+.control_box.widzet .h_widget .lst_control a:hover{background-position:-480px -80px}*/
+
+.flow_btn_ctrl li {
+    float: left;
+    width: 53px;
+    height: 36px;
+}
+
+.flow_btn_ctrl li a {
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.flow_btn_ctrl li.flow_bottom a {
+    background-position: -270px -368px;
+}
+
+.flow_btn_ctrl li.flow_bottom.on a {
+    background-position: -270px -330px;
+}
+
+.flow_btn_ctrl li.flow_down a {
+    background-position: -323px -368px;
+}
+
+.flow_btn_ctrl li.flow_down.on a {
+    background-position: -323px -330px;
+}
+
+.flow_btn_ctrl li.flow_up a {
+    background-position: -376px -368px;
+}
+
+.flow_btn_ctrl li.flow_up.on a {
+    background-position: -376px -330px;
+}
+
+.flow_btn_ctrl li.flow_top a {
+    background-position: -429px -368px;
+}
+
+.flow_btn_ctrl li.flow_top.on a {
+    background-position: -429px -330px;
+}
+
+.widget_control .ic {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.widget_control .noti .ic {
+    background-position: -170px -269px;
+}
+
+.widget_control .coin .ic {
+    background-position: -230px -90px;
+}
+
+.widget_control .socialGame .ic {
+    background-position: -170px -120px;
+}
+
+.widget_control .mail .ic {
+    background-position: -200px -120px;
+}
+
+.widget_control .weather .ic {
+    background-position: -200px -30px;
+}
+
+.widget_control .album .ic {
+    background-position: -230px -60px;
+}
+
+.widget_control .fortune .ic {
+    background-position: -200px -60px;
+}
+
+.widget_control .ndrive .ic {
+    background-position: -230px -30px;
+}
+
+.widget_control .calendar .ic {
+    background-position: -200px -90px;
+}
+
+.widget_control .cafe .ic {
+    background-position: -230px 0;
+}
+
+.widget_control .stock .ic {
+    background-position: -200px 0;
+}
+
+.widget_control .memo .ic {
+    background-position: -200px -150px;
+}
+
+.widget_control .shopping .ic {
+    background-position: -200px -120px;
+}
+
+.widget_control .serviceLink .ic {
+    background-position: -230px -150px;
+}
+
+.widget_control > ul {
+    overflow-y: auto;
+    position: relative;
+    height: 334px;
+}
+
+.widget_control.drag_mode > ul {
+    height: 297px;
+}
+
+.widget_control > ul li {
+    position: relative;
+    height: 36px;
+    border-top: 1px solid #eaeaea;
+    line-height: 35px;
+    cursor: pointer;
+}
+
+.widget_control > ul li.on, .widget_control > ul li:hover {
+    background: #d8e3ee;
+}
+
+.widget_control > ul li:first-child {
+    border-top: 0;
+}
+
+.widget_control > ul li button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    width: 33px;
+    height: 19px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    font-size: 11px;
+    letter-spacing: -1px;
+    z-index: 20;
+}
+
+.widget_control > ul li button.on {
+    background-position: -490px -300px;
+}
+
+.widget_control > ul li button.off {
+    background-position: -490px -280px;
+}
+
+.widget_control.drag_mode li button {
+    display: none;
+}
+
+.widget_control.drag_mode li .ic {
+    width: 13px;
+    height: 13px;
+    background: url(http://static.naver.net/me/new/ico_dragMode.gif) no-repeat;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li {
+    float: left;
+    width: 53px;
+    height: 36px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li a {
+    display: inline-block;
+    width: 100%;
+    height: 36px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_bottom a {
+    background-position: -270px -369px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_bottom.on a {
+    background-position: -270px -331px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_down a {
+    background-position: -323px -369px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_down.on a {
+    background-position: -323px -331px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_up a {
+    background-position: -376px -369px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_up.on a {
+    background-position: -376px -331px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_top a {
+    background-position: -429px -369px;
+}
+
+.widget_control.drag_mode .flow_btn_ctrl li.flow_top.on a {
+    background-position: -429px -331px;
+}
+
+.font_area dl {
+    float: none;
+    padding-left: 14px;
+    padding-top: 11px;
+    *zoom: 1;
+}
+
+.font_area dl:after {
+    display: block;
+    clear: both;
+    content: " ";
+}
+
+.font_area dt {
+    display: block;
+    float: left;
+    clear: left;
+    margin-right: 24px;
+    height: 23px;
+    line-height: 23px;
+    color: #2d2d2d;
+}
+
+.font_control ul {
+    float: left;
+}
+
+.font_control ul li {
+    float: left;
+    margin-left: 11px;
+    height: 23px;
+    line-height: 23px;
+}
+
+.font_control ul li a {
+    display: inline-block;
+    padding-right: 7px;
+    background: url(http://static.naver.net/me/new/bul_arr3.gif) no-repeat 100% 7px;
+    color: #777;
+    font-size: 12px;
+}
+
+.fontset_wrap .now {
+    display: block;
+    position: relative;
+    width: 98px;
+    height: 24px;
+    background-image: url(http://static.naver.net/me/new/sp_me_151117.png);
+}
+
+.fontset_wrap .then {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 0;
+    z-index: 40;
+    width: 98px;
+    height: 24px;
+    margin-top: -2px;
+    background-image: url(http://static.naver.net/me/new/sp_me_151117.png);
+}
+
+.fontset_wrap .none {
+    display: block;
+    position: relative;
+    width: 98px;
+    height: 24px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat -1310px -330px;
+}
+
+.fontset_wrap .now button, .fontset_wrap .then button {
+    width: 98px;
+    height: 24px;
+}
+
+.fontset_wrap .ss .now {
+    background-position: -910px -330px;
+}
+
+.fontset_wrap .nn .now {
+    background-position: -1110px -330px;
+}
+
+.fontset_wrap .ss .then {
+    background-position: -910px -360px;
+}
+
+.fontset_wrap .nn .then {
+    background-position: -1110px -360px;
+}
+
+/* 지역구독레이어 */
+
+.ly_local .ly_top h4 {
+    margin-bottom: 4px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ly_local .ly_top p {
+    line-height: 17px;
+    font-size: 11px;
+    color: #999;
+}
+
+.ly_local .lst_local ul {
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+    position: static;
+    height: 162px;
+    padding: 0 0 5px 9px;
+    width: 375px \9;
+}
+
+.ly_local .lst_local ul li {
+    float: left;
+    width: 108px;
+    padding-bottom: 7px;
+    padding-left: 11px;
+}
+
+.ly_local .lst_local ul li a {
+    color: #666;
+}
+
+.ly_local .lst_sub li {
+    overflow: hidden;
+    position: relative;
+    height: 52px;
+    padding: 0;
+    border-bottom: 1px solid #e7e8ea;
+    background: #fbfbfb;
+}
+
+.ly_local .lst_sub li:first-child {
+    height: 36px;
+    line-height: 36px;
+}
+
+.ly_local .lst_sub li:hover {
+    background: none;
+    text-decoration: none;
+}
+
+.ly_local .lst_sub li input {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 13px;
+    height: 13px;
+}
+
+.ly_local .lst_sub li dl {
+    overflow: hidden;
+    padding: 11px 0 11px;
+    zoom: 1;
+}
+
+.ly_local .lst_sub li dt {
+    padding: 8px 0 1px 60px;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ly_local .lst_sub li dt a {
+    padding-right: 6px;
+    background: url(http://static.naver.net/me/sp_bu20120726.png) 100% -210px no-repeat;
+    color: #333;
+}
+
+.ly_local .lst_sub li dt a:hover {
+    text-decoration: none;
+}
+
+.ly_local .lst_sub li dt .ico_new {
+    display: inline-block;
+    overflow: hidden;
+    width: 21px;
+    height: 11px;
+    margin: 3px 0 2px 5px;
+    _margin: 2px 0 3px 5px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -2020px -20px no-repeat;
+    line-height: 999px;
+    font-size: 0;
+    vertical-align: top;
+    *vertical-align: middle;
+}
+
+.ly_local .lst_sub li dd.txt {
+    clear: both;
+    padding-left: 80px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #666;
+}
+
+.ly_local .lst_sub li button {
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 33px;
+    height: 19px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    letter-spacing: -1px;
+    font-size: 11px;
+    z-index: 20;
+}
+
+.ly_local .lst_sub li button.on {
+    background-position: -490px -300px;
+}
+
+.ly_local .lst_sub li button.off {
+    background-position: -490px -280px;
+}
+
+.ly_local .lst_sub li .go_myarea a {
+    color: #999;
+}
+
+.ly_local .loc_view li {
+    float: left;
+    border-left: 1px solid #dedede;
+}
+
+.ly_local .loc_view li:first-child {
+    border-left: 0;
+}
+
+.ly_local .loc_view li a {
+    display: inline-block;
+    margin-left: 19px;
+    padding: 6px 8px 3px 0;
+    background: url(http://static.naver.net/me/sp_bu20120726.png) 100% -517px no-repeat;
+    line-height: 18px;
+    font-size: 12px;
+    color: #333;
+}
+
+.ly_local .loc_view #loc_view1.on + li {
+    border-left: 0;
+}
+
+.ly_local .loc_view #loc_view2.on + li {
+    border-left: 0;
+}
+
+.ly_local .act_local a {
+    overflow: hidden;
+    float: left;
+    height: 27px;
+    border-left: 1px solid #cfd5e1;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) no-repeat;
+    line-height: 999px;
+    font-size: 0;
+}
+
+.ly_local .loc_view .on {
+    position: relative;
+}
+
+.ly_local .loc_view .on a {
+    background-position: 100% -612px;
+    font-weight: bold;
+}
+
+.ly_local .ly_btm .off {
+    background-position: -1010px -30px;
+    cursor: default;
+}
+
+#loc_view3.unselected a {
+    color: #666;
+}
+
+.ly_local .select_loc ul {
+    overflow: hidden;
+    position: static;
+    top: auto;
+    left: auto;
+    width: auto;
+    padding: 0 4px 0 20px;
+}
+
+.ly_local .select_loc li {
+    overflow: hidden;
+    float: left;
+    position: relative;
+    width: 120px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.ly_local .select_loc .info {
+    height: 36px;
+    padding-left: 0;
+    color: #333;
+}
+
+.ly_local .select_loc li label {
+    padding-left: 21px;
+    color: #666;
+    letter-spacing: 0;
+    *padding-left: 0;
+}
+
+.ly_metoo .msg {
+    padding-right: 10px;
+    line-height: 18px;
+    color: #333;
+}
+
+.ly_metoo .msg strong {
+    color: #333 !important;
+}
+
+.nlst_checked .ly_metoo .msg strong {
+    color: #333 !important;
+}
+
+.ly_metoo .msg strong a {
+    width: auto;
+    background: none;
+    display: inline;
+    height: auto;
+    color: #e65802;
+}
+
+.ly_metoo .go_me2 .bu {
+    display: inline-block;
+    float: none;
+    width: 3px;
+    height: 6px;
+    margin: 0 0 0 3px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -2090px -40px no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+
+.ly_metoo .btn_clse button {
+    width: 15px;
+    height: 15px;
+    background: none;
+}
+
+.ly_metoo .wrt .org {
+    padding: 6px 5px 5px;
+    color: #34ab00;
+}
+
+.ly_metoo .act {
+    position: relative;
+    width: 258px;
+    height: 20px;
+    margin: 9px auto -29px;
+}
+
+.ly_metoo .act .btn_smit button {
+    width: 40px;
+    height: 20px;
+}
+
+.ly_metoo2 .msg {
+    width: 291px;
+    line-height: 18px;
+    font-size: 11px;
+    color: #666;
+}
+
+.ly_metoo2 .msg strong {
+    font-size: 12px;
+    color: #333;
+}
+
+.nlst_checked .ly_metoo2 .msg strong {
+    color: #333 !important;
+}
+
+.ly_metoo2 .metoo_ln .msg, .ly_metoo2 .metoo_ln2 .msg, .ly_metoo2 .metoo_ln3 .msg, .ly_metoo2 .metoo_ld .msg {
+    margin-top: -3px;
+    padding: 3px 0 0 19px;
+}
+
+.ly_metoo2 .msg .total {
+    color: #6343A9;
+}
+
+.ly_metoo2 .lk {
+    color: #999;
+    text-decoration: underline;
+}
+
+.ly_metoo2 .metoo_lst li {
+    display: inline;
+    float: left;
+    position: relative;
+    margin-right: 3px;
+}
+
+.ly_metoo2 .metoo_lst li a {
+    display: inline;
+    float: left;
+}
+
+.ly_metoo2 .btn_clse button {
+    width: 10px;
+    height: 10px;
+}
+
+.ly_metoo2 .btn_help button {
+    width: 14px;
+    height: 14px;
+}
+
+.ly_feedcncl .info {
+    padding: 26px 0 8px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #333;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.ly_feedcncl .info em {
+    color: #109c01;
+}
+
+.ly_feedcncl .info a {
+    color: #109c01;
+    text-decoration: underline;
+}
+
+.ly_feedcncl .info span {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    color: #666;
+    height: auto;
+}
+
+.ly_feedcncl .link {
+    padding: 2px 0 3px;
+    font-size: 11px;
+    letter-spacing: -1px;
+    text-align: center;
+    _vertical-align: baseline;
+}
+
+.ly_feedcncl .link a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.ly_feedcncl .link .bu {
+    display: inline-block;
+    width: 3px;
+    height: 5px;
+    margin: -1px 0 1px 3px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -1850px 0 no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+
+.ly_feedcncl .btns span {
+    display: inline-block;
+    height: 31px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png);
+}
+
+.ly_feedcncl .btns button {
+    height: 31px;
+    position: static;
+}
+
+.ly_feedcncl .btns .btn_feedok button {
+    width: 78px;
+    height: 30px;
+}
+
+.ly_feedcncl .btns .btn_editmyloc button {
+    width: 104px;
+}
+
+.ly_feedcncl .btn_feedcncl button, .ly_feedcncl .btn_feedcfrm button {
+    width: 47px;
+}
+
+.ly_feedcncl .btn_clse button {
+    width: 19px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+    position: static;
+    background: none;
+}
+
+/*@-webkit-keyframes op_ly_feedcncl{from{opacity:0}to{opacity:1}}*/
+
+.ly_sns strong {
+    color: #109c01;
+}
+
+.ly_sns .btns span, .ly_sns .btns button {
+    width: 92px;
+    height: 32px;
+}
+
+.ly_sns .btns span button {
+    background: none;
+}
+
+.err_load {
+    width: 698px;
+    height: 35px;
+    margin: 10px auto 0 auto;
+    border: 1px solid #e0e0e0;
+    line-height: 36px;
+    text-align: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.err_load span {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.err_load a {
+    display: inline-block;
+    cursor: pointer;
+    color: #059b00;
+    text-decoration: underline;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.etc_set strong, .empty_result strong {
+    font-size: 14px;
+    color: #2d2d2d;
+    line-height: 20px;
+}
+
+.etc_set strong em, .empty_result strong em {
+    color: #26b71d;
+}
+
+.etc_set p, .empty_result p {
+    margin-top: 7px;
+    margin-bottom: 11px;
+    color: #666;
+    line-height: 17px;
+}
+
+.etc_set .other_link li {
+    line-height: 20px;
+    color: #2d2d2d;
+}
+
+.etc_set .other_link li a {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 11px;
+    color: #26b71d;
+    letter-spacing: -1px;
+}
+
+.etc_set .other_link li a span {
+    display: inline-block;
+    width: 3px;
+    height: 5px;
+    margin-left: 3px;
+    background: url(http://static.naver.net/me/sp_bu20120726.png) -37px -213px no-repeat;
+    vertical-align: middle;
+}
+
+.empty_result .btn_direct .tx_node {
+    display: inline-block;
+    float: left;
+    height: 35px;
+    line-height: 36px;
+}
+
+.norepl p {
+    width: 212px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #999;
+}
+
+.norepl .bu {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 2px 3px -2px 0;
+    background: url(http://static.naver.net/me/sp_me20120726.png) -2080px -100px no-repeat;
+}
+
+/* bookMark */
+.opt_group {
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.opt_area {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 24px;
+}
+
+.opt_area fieldset {
+    float: left;
+    width: 196px;
+    border: 1px solid #cdcdcd;
+    height: 21px;
+    *padding-top: 1px;
+}
+
+.opt_area input {
+    float: left;
+    width: 160px;
+    height: 21px;
+    border: 0;
+    line-height: 21px;
+    padding: 0 5px;
+    color: #999;
+    -webkit-appearance: none;
+}
+
+.opt_area button {
+    float: left;
+    width: 26px;
+    height: 21px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -440px -440px;
+    border: 0;
+}
+
+.opt_area .result_v {
+    display: inline-block;
+    float: left;
+    line-height: 21px;
+    height: 21px;
+    margin: 0 0 0 9px;
+    color: #444;
+}
+
+.opt_area2 {
+    position: absolute;
+    overflow: hidden;
+    right: 15px;
+    top: 21px;
+}
+
+.opt_area2 ul {
+    float: left;
+    margin: 9px 10px 0 0;
+}
+
+.opt_area2 li {
+    float: left;
+    border-left: 1px solid #d0d0d0;
+    height: 11px;
+    margin-left: 8px;
+    padding-left: 8px;
+}
+
+.opt_area2 li:first-child {
+    border-left: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.opt_area2 li a {
+    color: #999;
+    display: block;
+    height: 11px;
+    margin-top: -1px;
+    font-size: 12px;
+}
+
+.opt_area2 li.on a {
+    color: #444;
+    font-weight: bold;
+}
+
+.opt_area2 button {
+    float: left;
+    width: 51px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.opt_area2 button.off {
+    background-position: 0 -530px;
+}
+
+.opt_area2 button.on {
+    background-position: -60px -530px;
+}
+
+.fifth_contents .lst_obj .thumb {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #dadada;
+}
+
+.fifth_contents .lst_obj .thumb a {
+    height: 52px;
+}
+
+.fifth_contents .lst_obj .thumb .bookmark {
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -510px -630px;
+}
+
+.fifth_contents .lst_obj .desc_bx {
+    margin-left: 68px;
+    position: relative;
+    top: -2px;
+}
+
+.fifth_contents .lst_obj .con_desc {
+    width: 540px;
+}
+
+.fifth_contents .top_btn_area {
+    line-height: normal;
+    height: auto;
+    padding: 15px;
+}
+
+.add_bmk {
+    overflow: hidden;
+    background: url(http://static.naver.net/me/new/srch_bg.gif) no-repeat 0 0;
+}
+
+.add_bmk input {
+    float: left;
+    margin-left: 7px;
+    padding-left: 5px;
+    width: 607px;
+    height: 31px;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    border-left: 0;
+    border-right: 0;
+    line-height: 31px;
+    color: #999;
+    padding-right: 12px;
+}
+
+.add_bmk button {
+    width: 89px;
+    height: 33px;
+    background-position: 0 -560px;
+}
+
+.often_mode .add_bmk button {
+    width: 127px;
+    height: 33px;
+    background-position: 0 -600px;
+}
+
+.often_mode .add_bmk input {
+    width: 569px;
+}
+
+.depth_tree span a {
+    color: #a5a5a5;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 188px;
+    line-height: 18px;
+    background: url(http://static.naver.net/me/new/bul_depth.gif) no-repeat 0 4px;
+}
+
+.depth_tree span.folder_name a {
+    color: #3aa4b7;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 188px;
+    line-height: 18px;
+    background: none;
+    max-width: 100px;
+    margin-right: 5px;
+}
+
+.depth_tree span.folder_name a:first-child {
+    margin-left: 0;
+}
+
+.depth_tree span.from_tx a {
+    padding-left: 0;
+    background: none;
+    max-width: 188px;
+}
+
+.depth_tree span.folder_name + span.from_tx a {
+    padding-left: 9px;
+    background: url(http://static.naver.net/me/new/bul_depth.gif) no-repeat 0 4px;
+}
+
+.con_desc .url_area a {
+    color: #777;
+}
+
+.con_desc .bmk_value a {
+    color: #777;
+}
+
+.con_desc .bmk_memo dt {
+    color: #666;
+    font-weight: bold;
+}
+
+.con_desc .bmk_memo dd {
+    color: #666;
+    line-height: 19px;
+    margin-top: 7px;
+    word-wrap: break-word;
+}
+
+.con_desc .bmk_memo dd a {
+    color: #666;
+}
+
+.fd_more button {
+    width: 55px;
+    height: 23px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+}
+
+.fd_more.off button {
+    background-position: -510px -470px;
+}
+
+.fd_more.on button {
+    background-position: -510px -500px;
+}
+
+.fd_option > button {
+    float: left;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+    height: 21px;
+}
+
+.top_btn_area .add_bmk_area {
+    display: block;
+}
+
+.top_btn_area .edit_mode_area {
+    display: none;
+}
+
+.top_btn_area.edit_mode .add_bmk_area {
+    display: none;
+}
+
+.top_btn_area.edit_mode .edit_mode_area {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    height: 31px;
+    padding-top: 2px;
+}
+
+.top_btn_area.edit_mode .edit_mode_area .chk_obj input {
+    vertical-align: text-top;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.top_btn_area.edit_mode .edit_mode_area .chk_obj input + span {
+    display: inline-block;
+    vertical-align: -1px;
+}
+
+.top_btn_area.edit_mode .edit_mode_area .chk_obj input + span em {
+    font-weight: bold;
+    color: #00a80c;
+}
+
+.top_btn_area.edit_mode .edit_mode_area button {
+    float: none;
+}
+
+.top_btn_area.edit_mode + .lst_area .lst_obj .desc_bx {
+    margin-left: 88px;
+}
+
+.fifth_contents.often_mode .lst_obj .thumb {
+    display: none;
+}
+
+.fifth_contents.often_mode .lst_obj .desc_bx {
+    margin-left: 0;
+}
+
+.fifth_contents.often_mode .lst_obj .con_desc {
+    width: 600px;
+}
+
+.fifth_contents.often_mode .top_btn_area.edit_mode + .lst_area .lst_obj .desc_bx {
+    margin-left: 19px;
+}
+
+.fifth_contents .ly_add_bmk .ly_clse button {
+    display: inline-block;
+    float: none;
+    width: 22px;
+    height: 22px;
+    background: none;
+}
+
+.fifth_contents .fd_option .ly_add_bmk .btn_area button {
+    background: none;
+}
+
+.fifth_contents .top_btn_area .ly_add_bmk h4, .fifth_contents .lst_obj .thumb + .desc_bx .con_desc .ly_add_bmk h4 {
+    font-size: 14px;
+    border-bottom: 1px solid #ededed;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 20px;
+}
+
+.fifth_contents .ly_add_bmk fieldset {
+    padding: 0 20px;
+}
+
+.fifth_contents .ly_add_bmk dl {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.fifth_contents .ly_add_bmk dt {
+    display: block;
+    float: left;
+    clear: left;
+    margin-right: 12px;
+    margin-top: 26px;
+}
+
+.fifth_contents .ly_add_bmk dd {
+    position: relative;
+    margin-top: 16px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder .edit_add input {
+    width: 165px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul {
+    padding-top: 4px;
+    padding-left: 0;
+    border-top: 0;
+    height: 119px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul a {
+    color: #333;
+    height: 29px;
+    padding-left: 10px;
+    display: block;
+    line-height: 29px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul li {
+    margin-top: 0;
+    height: 29px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul li.moved {
+    padding-left: 10px;
+    color: #999;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul li span {
+    line-height: 29px;
+}
+
+.fifth_contents .edit_mode_area .edit_folder ul a:hover {
+    background: #f3f3f3;
+}
+
+.fifth_contents .edit_mode_area .edit_folder .edit_add p {
+    clear: left;
+    line-height: 18px;
+    color: #777;
+    padding-top: 8px;
+}
+
+.fifth_contents .edit_mode_area .ly_edit_mode .btn_area {
+    text-align: center;
+    margin: -15px 0 20px 0;
+}
+
+.fifth_contents .edit_mode_area .ly_edit_mode p.edit_tx strong {
+    color: #00b90d;
+}
+
+.fifth_contents .fd_option .fd_date + .edit_folder ul {
+    height: 78px;
+    margin-top: 11px;
+    padding-left: 20px;
+    border-top: 1px solid #ededed;
+}
+
+.fifth_contents .fd_option .fd_date + .edit_folder .btn_area {
+    padding-top: 2px;
+    text-align: center;
+}
+
+.fifth_contents .fd_option .fd_date + .edit_folder .btn_area .me_btn {
+    padding: 0 3px 0 0;
+}
+
+.fifth_contents .fd_option .fd_date + .edit_folder .btn_area .me_btn:before {
+    margin-right: 5px;
+}
+
+.fifth_contents .fd_option .fd_date + .edit_folder .btn_area button {
+    float: none;
+    background: none;
+}
+
+.fifth_contents .edit_folder ul {
+    padding-top: 11px;
+    overflow-y: auto;
+    padding-left: 12px;
+    height: 78px;
+    border-bottom: 1px solid #ededed;
+    *position: relative;
+}
+
+.fifth_contents .edit_folder ul li {
+    margin-top: 3px;
+    position: relative;
+    height: 20px;
+}
+
+.fifth_contents .edit_folder ul li:first-child {
+    margin-top: 0;
+}
+
+.fifth_contents .edit_folder ul li span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 23px;
+    padding-left: 20px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat;
+    line-height: 15px;
+    vertical-align: -1px;
+    white-space: nowrap;
+    max-width: 70%;
+}
+
+.fifth_contents .edit_folder ul li input {
+    margin-right: 10px;
+    vertical-align: top;
+    *vertical-align: 4px;
+    margin-top: 1px;
+}
+
+.fifth_contents .edit_folder ul li .cnt {
+    position: absolute;
+    right: 11px;
+    color: #0ba506;
+    font-size: 11px;
+    top: 2px;
+}
+
+.fifth_contents .edit_folder .edit_add input {
+    display: inline-block;
+    float: left;
+    position: relative;
+    width: 324px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat 0 -670px;
+    border: 0;
+    line-height: 29px;
+    padding: 0 10px;
+    color: #999;
+}
+
+.fifth_contents .edit_folder .edit_add .btn_add button {
+    width: 56px;
+    height: 29px;
+    background: none;
+}
+
+.fifth_contents .top_btn_area .ly_add_bmk dd .edit_folder ul {
+    padding: 15px 0 4px 12px;
+}
+
+.fifth_contents .top_btn_area .ly_add_bmk dd .edit_folder li {
+    height: 24px;
+}
+
+.fifth_contents .ly_add_bmk dd .bmk_title input {
+    float: left;
+    width: 388px;
+    height: 29px;
+    border: 0;
+    padding: 0 0 0 0;
+    line-height: 29px;
+    vertical-align: middle;
+    color: #999;
+}
+
+.fifth_contents .ly_add_bmk dd .bmk_title.str_true input {
+    width: 370px;
+}
+
+.fifth_contents .ly_add_bmk dd .foler_bx ul {
+    padding: 7px 10px 0 10px;
+}
+
+.fifth_contents .ly_add_bmk dd .foler_bx ul li {
+    display: inline;
+    word-break: break-all;
+}
+
+.fifth_contents .ly_add_bmk dd .foler_bx ul li span {
+    display: inline-block;
+    height: 23px;
+    padding-left: 22px;
+    margin-right: 5px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -9999px -9999px;
+    word-break: break-all;
+    vertical-align: -1px;
+}
+
+.fifth_contents .ly_add_bmk dd .ly_btn_bmk button {
+    width: 100%;
+    height: 31px;
+    background: none;
+    overflow: visible;
+}
+
+.fifth_contents .ly_add_bmk dd textarea {
+    width: 400px;
+    height: 47px;
+    padding: 7px 10px;
+    border: 1px solid #d2d2d2;
+}
+
+.fifth_contents .ly_add_bmk .btn_area {
+    margin-top: 3px;
+    border-top: 1px solid #e4e4e4;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 20px \9;
+}
+
+.fifth_contents .ly_add_bmk .btn_area button {
+    float: none;
+}
+
+.fifth_contents .ly_add_bmk .btn_area .me_btn {
+    padding: 0 3px 0 0;
+}
+
+.fifth_contents .ly_add_bmk .btn_area .me_btn button {
+    padding: 0 8px;
+    margin-right: 5px;
+}
+
+.fifth_contents .ly_add_bmk .btn_area .me_btn:before {
+    margin-right: 5px;
+}
+
+/* nanum setup error */
+
+/*@-webkit-keyframes op_ly_wrap{from{opacity:0}to{opacity:1}}*/
+
+.ly_cm button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.ly_cm .ico {
+    display: block;
+    width: 25px;
+    height: 24px;
+    margin: 0 auto 17px;
+    background: url(http://static.naver.net/me/sp_me20120726.png) no-repeat -1460px -110px;
+}
+
+.ly_cm .cont {
+    margin: 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e6e8ea;
+    line-height: 19px;
+    color: #333;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.ly_cm .cont .top {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.ly_cm .cont em {
+    font-weight: 700;
+    color: #390;
+}
+
+.ly_cm .cont2 h4 {
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.ly_cm .cont2 li {
+    padding: 0 0 6px;
+    font-size: 11px;
+    color: #888;
+}
+
+.ly_cm .cont2 li .bu {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    margin: 3px 6px -3px 0;
+    background: url(http://static.naver.net/me/sp_me20120726.png) -850px 0 no-repeat;
+    vertical-align: top;
+}
+
+.ly_cm .ly_btn span {
+    display: inline-block;
+    width: 42px;
+    height: 27px;
+    vertical-align: top;
+}
+
+.ly_cm .ly_btn button {
+    width: 42px;
+    height: 27px;
+}
+
+.ly_cm .license {
+    margin: 0 20px;
+    padding: 12px 0 11px;
+    text-align: center;
+}
+
+.ly_cm .license p {
+    padding-bottom: 6px;
+    color: #8d8d8d;
+}
+
+.ly_cm .license a {
+    color: #00c;
+    text-decoration: underline;
+}
+
+.bookmark_opt a, .bookmark_opt label {
+    display: inline-block;
+    line-height: 15px;
+}
+
+.ic_bookmark {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 21;
+    width: 24px;
+    height: 23px;
+    padding: 4px 8px 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333;
+}
+
+.ic_bookmark a {
+    display: block;
+    width: 16px;
+    height: 15px;
+    margin: 4px;
+    background-position: -320px -20px;
+    color: #38b601;
+}
+
+.ic_bookmark a.on {
+    background-position: -340px -20px;
+}
+
+/* Promotion Rolling */
+
+.prmt_rolling_area li {
+    height: 43px;
+    line-height: 43px;
+    vertical-align: top;
+}
+
+.lst_prmt .cont {
+    height: 43px;
+    color: #444;
+    letter-spacing: -1px;
+    line-height: 43px;
+}
+
+.lst_prmt .cont a {
+    color: #444;
+}
+
+.lst_prmt .cont a em {
+    color: #2a9901;
+}
+
+.prmt_rolling_area .cont a strong {
+    color: #2a9901;
+}
+
+.lst_prmt .cont img {
+    display: inline-block;
+    margin: 0 2px 0 3px;
+    vertical-align: middle;
+}
+
+.lst_prmt .ad {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 43px;
+    margin-right: 26px;
+    background-repeat: no-repeat;
+    *position: static;
+}
+
+.lst_prmt .ad a {
+    display: block;
+    z-index: 1;
+    width: 100%;
+    height: 42px;
+}
+
+.prmt_rolling_ctrl .btn_close button {
+    width: 18px;
+    height: 17px;
+    vertical-align: top;
+}
+
+.prmt_rolling_ctrl .btn_close button:hover {
+    background: url(http://static.naver.net/me/new/sp_me20130725.png) no-repeat -1700px -90px;
+}
+
+/* promotion banner */
+
+.r_step li {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.r_step li a {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+}
+
+#rolling ul {
+    float: left;
+    width: 35000px;
+}
+
+#rolling ul li {
+    float: left;
+}
+
+#rolling ul li p {
+    width: 790px;
+    height: 520px;
+}
+
+.pro_banner .ly_prev a, .pro_banner .ly_next a {
+    display: inline-block;
+    width: 100%;
+    height: 65px;
+}
+
+.img_hodler p {
+    width: 100%;
+    height: 520px;
+}
+
+.pro_clse a {
+    display: inline-block;
+    width: 100%;
+    height: 34px;
+}
+
+.dont_again a {
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+}
+
+#rolling .go_view a {
+    display: block;
+    height: 30px;
+}
+
+/* promotion banner2 */
+
+.pro_banner2 .go_reple_cont a {
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+}
+
+.pro_banner2 .reple_start a {
+    display: inline-block;
+    width: 100%;
+    height: 75px;
+}
+
+.pro_banner2 .view_chk input {
+    vertical-align: text-top;
+    margin-right: 4px;
+    *vertical-align: middle;
+}
+
+.pro_banner2 .view_chk label {
+    vertical-align: -1px;
+    letter-spacing: -1px;
+}
+
+.pro_banner2 .ly_clse a {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+}
+
+.pro_banner2 .ly_clse2 a {
+    display: inline-block;
+    width: 100%;
+    height: 33px;
+}
+
+.pro_banner3 .go_reple_cont a {
+    display: inline-block;
+    width: 100%;
+    height: 32px;
+}
+
+.pro_banner3 .view_chk input {
+    vertical-align: text-top;
+    margin-right: 4px;
+    *vertical-align: middle;
+}
+
+.pro_banner3 .view_chk label {
+    vertical-align: -1px;
+    letter-spacing: -1px;
+}
+
+.pro_banner3 .ly_clse a {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+}
+
+.pro_banner3 .ly_clse2 a {
+    display: inline-block;
+    width: 100%;
+    height: 33px;
+}
+
+.ly_guide_me h4 {
+    width: 405px;
+    height: 28px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat 0 -640px;
+}
+
+.ly_guide_me dl {
+    overflow: hidden;
+    line-height: normal;
+    margin-top: 16px;
+}
+
+.ly_guide_me dt {
+    display: block;
+    float: left;
+    clear: left;
+    color: #00b03e;
+    line-height: 20px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.ly_guide_me dd {
+    line-height: 20px;
+    color: #555;
+}
+
+.ly_guide_me dd a {
+    color: #555;
+    display: inline-block;
+    background: url(http://static.naver.net/me/new/bul_ly_guide.gif) no-repeat 100% 6px;
+    padding-right: 10px;
+}
+
+.ly_guide_me .btn_clse button {
+    width: 23px;
+    height: 23px;
+    border: 0;
+    background: none;
+}
+
+.ly_guide_me .btn_clse2 span {
+    display: inline-block;
+    float: none;
+    width: 14px;
+    height: 13px;
+    background: url(http://static.naver.net/me/new/sp_me_new20160113.png) no-repeat -550px -530px;
+    vertical-align: top;
+    margin-left: 4px;
+}
+
+/* common button */
+.me_btn {
+    display: inline-block;
+    position: relative;
+    border: 0;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 100% 0;
+    margin: 0;
+    padding: 0 9px 0 0;
+    line-height: 29px;
+}
+
+.me_btn:before {
+    display: inline-block;
+    width: 3px;
+    height: 29px;
+    background: url(http://static.naver.net/me/new/btn_bg.png) no-repeat 0 0;
+    content: "";
+    vertical-align: top;
+    margin-right: 6px;
+}
+
+.me_btn button {
+    overflow: visible;
+    border: 0;
+    background: none;
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 29px;
+}
+
+.me_btn button[disabled] {
+    color: #a0a0a0 !important;
+}
+
+.me_btn button .ico_me3 {
+    display: inline-block;
+    width: 7px;
+    height: 4px;
+    background: url(http://static.naver.net/me/new/bul_bmk.gif) no-repeat 0 0;
+    margin-left: 3px;
+    vertical-align: 2px;
+}
+
+* + html .me_btn {
+    border: 1px solid #d2d2d2;
+    background: none;
+    padding: 0 3px;
+}
+
+.me_btn button .cnt {
+    padding-left: 3px;
+    color: #f05765;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* notice */
+.notice_ftr {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.notice_ftr ul {
+    display: inline-block;
+    text-align: center;
+}
+
+.notice_ftr li {
+    float: left;
+    height: 11px;
+    border-left: 1px solid #e0e0e0;
+    line-height: 11px;
+    margin-left: 8px;
+    padding-left: 9px;
+    *line-height: 12px;
+}
+
+.notice_ftr li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.notice_ftr li a {
+    font-size: 12px;
+    color: #536174;
+}
+
+.notice_ftr li .ico_new {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px 0 3px;
+    background: url(http://static.naver.net/me/new/sp_me_151117.png) -2030px -40px;
+}
+
+/* error - section */
+
+.err_wrap button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.err_sec .ico {
+    display: block;
+    width: 25px;
+    height: 24px;
+    margin: 0 auto 12px;
+    background: url(http://static.naver.net/me/new/sp_me20130411.png) -1460px -110px no-repeat;
+}
+
+.err_sec .err_desc em {
+    color: #390;
+}
+
+.err_sec .err_desc3 a {
+    color: #004790;
+    text-decoration: underline;
+}
+
+.err_sec .err_desc5 a {
+    color: #004790;
+    text-decoration: underline;
+}
+
+.err_sec .err_lst dt {
+    float: left;
+    width: 62px;
+    padding-left: 8px;
+    background: url(http://static.naver.net/me/sp_bu20120726.png) no-repeat 0 -193px;
+    color: #000;
+}
+
+.err_sec .err_lst dd {
+    float: left;
+    width: 293px;
+    color: #656d80;
+}
+
+.err_sec .err_lst dd em {
+    font-weight: 700;
+    color: #390;
+}
+
+#section_cldmm .err_sec .err_lst dd {
+    width: 149px;
+}
